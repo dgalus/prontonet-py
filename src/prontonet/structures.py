@@ -1,9 +1,23 @@
 from dataclasses import dataclass
+from typing import Type
 from prontonet.constants import IP_SECURITY_STRING
-from prontonet.enums import DeviceNet, LineStatus, IPCallType, AlarmStatus, Codec, BitsSample, AudioMode, EncoderMix, \
+from prontonet.enums import Command, DeviceNet, LineStatus, IPCallType, AlarmStatus, Codec, BitsSample, AudioMode, EncoderMix, \
     MPEGLayer, Frequency, BondingType, AACMode, BitRate, APTXType, G711Law, MPEGL3Polarity, StreamingProtocol, \
     DeviceSubNet, ProntoNetCodecMode, AudioConfig, SIPAddressType, AudioAlgorithm, EthernetInterface, \
-    EthernetNegotiatedSpeed, AudioModeAlgorithm
+    EthernetNegotiatedSpeed, AudioModeAlgorithm, Acknowledge
+
+
+@dataclass
+class ProntonetCommand:
+    command: bytes
+    unpack_pattern: str
+    response_type: Type
+
+
+@dataclass
+class AcknowledgeResponse:
+    command: Command
+    acknowledge: Acknowledge
 
 
 @dataclass

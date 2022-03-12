@@ -318,3 +318,8 @@ class AudioModeAlgorithm(IntEnum):
     G722 = 4
     AUTO = 5
     APTX = 6
+
+
+class Acknowledge(IntEnum):
+    ERROR = 0
+    SUCCESS = 1

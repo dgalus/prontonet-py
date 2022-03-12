@@ -3,7 +3,7 @@ from prontonet.structures import *
 from prontonet.enums import *
 
 
-class ProdysProtocol:
+class ProntonetProtocol:
     @staticmethod
     def connect():
         command_code = Command.CONNECT
@@ -12,8 +12,12 @@ class ProdysProtocol:
         return b + cs.zfill(20)
 
     @staticmethod
-    def get_device_net():
-        return struct.pack("<ii", Command.COMMAND_GET_DEVICE_NET, 0)
+    def get_device_net() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_GET_DEVICE_NET, 0),
+            "iii",
+            DeviceNet
+        )
 
     @staticmethod
     def set_device_net():  # TODO
@@ -26,40 +30,72 @@ class ProdysProtocol:
         pass
 
     @staticmethod
-    def answer(arg: CommandAnswer):
-        return struct.pack("<iii", Command.COMMAND_ANSWER, 4, arg.line)
+    def answer(arg: CommandAnswer) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_ANSWER, 4, arg.line),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
-    def hang_up(arg: CommandHangUp):
-        return struct.pack("<iii", Command.COMMAND_HANG_UP, 4, arg.line)
+    def hang_up(arg: CommandHangUp) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_HANG_UP, 4, arg.line),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
-    def get_line_status(arg: CommandGetLineStatus):
-        return struct.pack("<iii", Command.COMMAND_GET_LINE_STATUS, 4, arg.line)
+    def get_line_status(arg: CommandGetLineStatus) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_GET_LINE_STATUS, 4, arg.line),
+            "iii",
+            CommandGetLineStatusResponse
+        )
 
     @staticmethod
-    def get_line_status_details(arg: CommandGetLineStatusDetails):
+    def get_line_status_details(arg: CommandGetLineStatusDetails):  # TODO
         return struct.pack("<iii", Command.COMMAND_GET_LINE_STATUS_DETAILS, 4, arg.line)
 
     @staticmethod
-    def get_vu_meters():
-        return struct.pack("<ii", Command.COMMAND_GET_VU_METERS, 0)
+    def get_vu_meters() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_GET_VU_METERS, 0),
+            "iiiiii",
+            CommandGetVUMetersResponse
+        )
 
     @staticmethod
-    def get_monitors():
-        return struct.pack("<ii", Command.COMMAND_GET_MONITORS, 0)
+    def get_monitors() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_GET_MONITORS, 0),
+            "iiiiii",
+            CommandGetMonitorsResponse
+        )
 
     @staticmethod
-    def get_alarm_status():
-        return struct.pack("<ii", Command.COMMAND_DECODER_GET_AUDIO_MODE, 0)
+    def get_alarm_status() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_ALARMS_GET_STATUS, 0),
+            "iii",
+            AlarmStatus
+        )
 
     @staticmethod
-    def get_decoder_audio_mode(arg: CommandDecoderGetAudioMode):
-        return struct.pack("<iii", Command.COMMAND_DECODER_GET_AUDIO_MODE, 4, arg.codec)
+    def get_decoder_audio_mode(arg: CommandDecoderGetAudioMode) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_DECODER_GET_AUDIO_MODE, 4, arg.codec),
+            "ii#",
+            bytes
+        )
 
     @staticmethod
-    def get_encoder_audio_mode(arg: CommandEncoderGetAudioMode):
-        return struct.pack("<iii", Command.COMMAND_ENCODER_GET_AUDIO_MODE, 4, arg.codec)
+    def get_encoder_audio_mode(arg: CommandEncoderGetAudioMode) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_ENCODER_GET_AUDIO_MODE, 4, arg.codec),
+            "ii#",
+            bytes
+        )
 
     @staticmethod
     def set_encoder_audio_mode_pcm(arg: CommandEncoderSetAudioModePCM):
