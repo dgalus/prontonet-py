@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import Type
 from prontonet.constants import IP_SECURITY_STRING
-from prontonet.enums import Command, DeviceNet, LineStatus, IPCallType, AlarmStatus, Codec, BitsSample, AudioMode, EncoderMix, \
-    MPEGLayer, Frequency, BondingType, AACMode, BitRate, APTXType, G711Law, MPEGL3Polarity, StreamingProtocol, \
-    DeviceSubNet, ProntoNetCodecMode, AudioConfig, SIPAddressType, AudioAlgorithm, EthernetInterface, \
-    EthernetNegotiatedSpeed, AudioModeAlgorithm, Acknowledge
+from prontonet.enums import Command, DeviceNet, LineStatus, IPCallType, AlarmStatus, Codec, BitsSample, AudioMode, \
+    EncoderMix, MPEGLayer, Frequency, BondingType, AACMode, BitRate, APTXType, G711Law, MPEGL3Polarity, \
+    StreamingProtocol, DeviceSubNet, ProntoNetCodecMode, AudioConfig, SIPAddressType, AudioAlgorithm, \
+    EthernetInterface, EthernetNegotiatedSpeed, AudioModeAlgorithm, Acknowledge
 
 
 @dataclass
@@ -319,7 +319,7 @@ class CommandGetCallDurationResponse:
 
 
 @dataclass
-class CommandAudioGetConfiguration:
+class CommandAudioGetConfigurationResponse:
     command_supported: bool
     audio_config: AudioConfig
     db_in_left: int
@@ -370,6 +370,16 @@ class CommandSIPConfiguration:
 
 @dataclass
 class CommandProdysV4Configuration:
+    line_1_port: int
+    enable_control_port: bool
+    auto_answer: bool
+    enable_fec: bool
+    audio_packets_per_fec_packet: int
+    fec_delay: int
+
+
+@dataclass
+class CommandProdysV4ConfigurationResponse:
     line_1_port: int
     enable_control_port: bool
     auto_answer: bool
@@ -511,3 +521,141 @@ class CommandDecoderGetAudioModeAlgorithmResponse:
     valid_request: bool
     is_framed: bool
     audio_mode_algorithm: AudioModeAlgorithm
+
+
+@dataclass
+class CommandEncoderGetAudioModeAutoResponse:
+    codec: Codec
+    aux_data: bool
+
+
+@dataclass
+class CommandEncoderGetAudioModePCMResponse:
+    codec: Codec
+    bits_sample: BitsSample
+    audio_mode: AudioMode
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandEncoderGetAudioModeG711Response:
+    codec: Codec
+    g711_law: G711Law
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandEncoderGetAudioModeG722Response:
+    codec: Codec
+    encoder_mix: EncoderMix
+    aux_data: bool
+    g722_dither: bool
+
+
+@dataclass
+class CommandEncoderGetAudioModeMPEGResponse:
+    codec: Codec
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    mpeg_layer: MPEGLayer
+    frequency: Frequency
+    crc: bool
+    aux_data: bool
+    encoder_mix: EncoderMix
+    bonding_type: BondingType
+    mpeg_l3_polarity: MPEGL3Polarity
+
+
+@dataclass
+class CommandEncoderGetAudioModeAACResponse:
+    codec: Codec
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    aac_mode: AACMode
+    frequency: Frequency
+    crc: bool
+    aux_data: bool
+    encoder_mix: EncoderMix
+    bonding_type: BondingType
+
+
+@dataclass
+class CommandEncoderGetAudioModeAPTXResponse:
+    codec: Codec
+    aptx_type: APTXType
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandDecoderGetAudioModePCMResponse:
+    codec: Codec
+    bits_sample: BitsSample
+    audio_mode: AudioMode
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandDecoderGetAudioModeG711Response:
+    codec: Codec
+    g711_law: G711Law
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandDecoderGetAudioModeG722Response:
+    codec: Codec
+    encoder_mix: EncoderMix
+    aux_data: bool
+    g722_dither: bool
+
+
+@dataclass
+class CommandDecoderGetAudioModeMPEGResponse:
+    codec: Codec
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    mpeg_layer: MPEGLayer
+    frequency: Frequency
+    crc: bool
+    aux_data: bool
+    encoder_mix: EncoderMix
+    bonding_type: BondingType
+    mpeg_l3_polarity: MPEGL3Polarity
+
+
+@dataclass
+class CommandDecoderGetAudioModeAACResponse:
+    codec: Codec
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    aac_mode: AACMode
+    frequency: Frequency
+    crc: bool
+    aux_data: bool
+    encoder_mix: EncoderMix
+    bonding_type: BondingType
+
+
+@dataclass
+class CommandDecoderGetAudioModeAPTXResponse:
+    codec: Codec
+    aptx_type: APTXType
+    bit_rate: BitRate
+    audio_mode: AudioMode
+    encoder_mix: EncoderMix
+    aux_data: bool
+
+
+@dataclass
+class CommandAudioModeOPUS:
+    codec: Codec
+    bit_rate: BitRate
+    encoder_mix: EncoderMix
+    aux_data: bool

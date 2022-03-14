@@ -1,6 +1,6 @@
 import codecs
 
-from prontonet.prontonet_device import ProntonetDevice
+from prontonet.device import ProntonetDevice
 from prontonet.protocol import ProntonetProtocol
 from prontonet.structures import *
 from prontonet.enums import *
@@ -23,4 +23,5 @@ if __name__ == '__main__':
     print(pd.send_command(ProntonetProtocol.get_monitors()))
     print(pd.send_command(ProntonetProtocol.get_decoder_audio_mode(CommandDecoderGetAudioMode(codec=Codec.CODEC_1))))
     print(pd.send_command(ProntonetProtocol.get_encoder_audio_mode(CommandEncoderGetAudioMode(codec=Codec.CODEC_1))))
+    print(pd.send_command(ProntonetProtocol.alarms_get_log()))
     pd.disconnect()
