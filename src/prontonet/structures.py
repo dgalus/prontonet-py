@@ -270,6 +270,11 @@ class CommandCallV2:
 
 
 @dataclass
+class CommandEnableNetBackup:
+    enable: bool
+
+
+@dataclass
 class CommandGetLoadedPresetIndex:
     index: int
 
@@ -344,8 +349,8 @@ class CommandSysDeviceName:
 
 @dataclass
 class CommandSysGetVersionInfo:
-    serial_number: str
-    version: str
+    serial_number: bytes
+    version: bytes
 
 
 @dataclass
@@ -365,7 +370,7 @@ class CommandSIPConfiguration:
     sip_address_type: SIPAddressType
     public_address: str
     stun_address: str
-    stun_request_period: str
+    stun_request_period: int
 
 
 @dataclass

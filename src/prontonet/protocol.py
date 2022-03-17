@@ -20,14 +20,22 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def set_device_net():  # TODO
-        command_code = 101
-        pass
+    def set_device_net(arg: CommandDeviceNet) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_SET_DEVICE_NET, 4, arg.device_net),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
-    def call():  # TODO
-        command_code = 102
-        pass
+    def call(arg: CommandCall) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_CALL, 40, arg.line)
+            + arg.number[0:32].ljust(32, '\x00').encode("utf-8")
+            + struct.pack("<i", arg.ip_call_type),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def answer(arg: CommandAnswer) -> ProntonetCommand:
@@ -54,8 +62,12 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def get_line_status_details(arg: CommandGetLineStatusDetails):  # TODO
-        return struct.pack("<iii", Command.COMMAND_GET_LINE_STATUS_DETAILS, 4, arg.line)
+    def get_line_status_details(arg: CommandGetLineStatusDetails) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_GET_LINE_STATUS_DETAILS, 4, arg.line),
+            "ii32sii",
+            CommandGetLineStatusDetailsResponse
+        )
 
     @staticmethod
     def get_vu_meters() -> ProntonetCommand:
@@ -216,9 +228,13 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def load_preset():  # TODO
-        command_code = 125
-        pass
+    def load_preset(arg: CommandLoadPreset) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_LOAD_PRESET, 255)
+            + arg.name[0:255].ljust(255, '\x00').encode("utf-8"),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def call_from_book(arg: CommandCallFromBook) -> ProntonetCommand:
@@ -253,19 +269,31 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def get_device_net_v2():  # TODO
-        command_code = 130
-        pass
+    def get_device_net_v2() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_GET_DEVICE_NET_V2, 0),
+            "ii5i",
+            CommandDeviceNetV2
+        )
 
     @staticmethod
-    def set_device_net_v2(arg: CommandDeviceNetV2):
-        return struct.pack("<ii5i", Command.COMMAND_SET_DEVICE_NET_V2, 20, arg.device_net, arg.device_sub_net,
-                           arg.pronto_net_codec_mode, arg.multi_unicast, arg.streaming_protocol)
+    def set_device_net_v2(arg: CommandDeviceNetV2) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii5i", Command.COMMAND_SET_DEVICE_NET_V2, 20, arg.device_net, arg.device_sub_net,
+                        arg.pronto_net_codec_mode, arg.multi_unicast, arg.streaming_protocol),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
-    def call_v2(arg: CommandCallV2):  # TODO
-        command_code = 132
-        pass
+    def call_v2(arg: CommandCallV2) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_CALL_V2, 44, arg.line)
+            + arg.number[0:32].ljust(32, '\x00').encode("utf-8")
+            + struct.pack("<ii", arg.ip_call_type, arg.target_codec),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def get_loaded_preset_index(arg: CommandGetLoadedPresetIndex) -> ProntonetCommand:
@@ -284,9 +312,12 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def enable_net_backup():  # TODO
-        command_code = 135
-        pass
+    def enable_net_backup(arg: CommandEnableNetBackup) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<iii", Command.COMMAND_ENABLE_NET_BACKUP, 4, arg.enable),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def reset_device() -> ProntonetCommand:
@@ -297,9 +328,12 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def get_loaded_preset_name():  # TODO
-        command_code = 137
-        pass
+    def get_loaded_preset_name() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_GET_LOADED_PRESET_NAME, 0),
+            "#",
+            bytes
+        )
 
     @staticmethod
     def get_streaming_stats(arg: CommandGetStreamingStats) -> ProntonetCommand:
@@ -367,9 +401,13 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def set_device_name():  # TODO
-        command_code = 146
-        pass
+    def set_device_name(arg: CommandSysDeviceName) -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_SYS_SET_DEVICE_NAME, 256)
+            + arg.device_name[0:256].ljust(256, '\x00').encode("utf-8"),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def blink_device() -> ProntonetCommand:
@@ -380,17 +418,38 @@ class ProntonetProtocol:
         )
 
     @staticmethod
-    def get_version_info():  # TODO
-        return struct.pack("<ii", Command.COMMAND_SYS_GET_VERSION_INFO, 0)
+    def get_version_info() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_SYS_GET_VERSION_INFO, 0),
+            "ii16s16s",
+            CommandSysGetVersionInfo
+        )
 
     @staticmethod
-    def get_sip_configuration():  # TODO
-        return struct.pack("<ii", Command.COMMAND_SIP_GET_CONFIGURATION, 0)
+    def get_sip_configuration() -> ProntonetCommand:
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_SIP_GET_CONFIGURATION, 0),
+            "iiiiiiiii256s256s256s256sii256s256si",
+            CommandSIPConfiguration
+        )
 
     @staticmethod
-    def set_sip_configuration():  # TODO
-        command_code = 150
-        pass
+    def set_sip_configuration(arg: CommandSIPConfiguration) -> ProntonetCommand:  # TODO
+        return ProntonetCommand(
+            struct.pack("<ii", Command.COMMAND_SIP_SET_CONFIGURATION, 1576)
+            + struct.pack("<7i", arg.sip_port, arg.audio_port, arg.auto_answer, arg.enable_fec, arg.fec_port,
+                          arg.audio_packets_per_fec_packet, arg.register_in_server)
+            + arg.sip_user_name[0:256].ljust(256, '\x00').encode("utf-8")
+            + arg.sip_server_address[0:256].ljust(256, '\x00').encode("utf-8")
+            + arg.sip_server_user[0:256].ljust(256, '\x00').encode("utf-8")
+            + arg.sip_server_password[0:256].ljust(256, '\x00').encode("utf-8")
+            + struct.pack("<ii", arg.sip_server_timeout, arg.sip_address_type)
+            + arg.public_address[0:256].ljust(256, '\x00').encode("utf-8")
+            + arg.stun_address[0:256].ljust(256, '\x00').encode("utf-8")
+            + struct.pack("<i", arg.stun_request_period),
+            "iiii",
+            AcknowledgeResponse
+        )
 
     @staticmethod
     def get_configuration_v4() -> ProntonetCommand:

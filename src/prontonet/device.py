@@ -105,7 +105,7 @@ class ProntonetDevice:
         self.__command_socket.send(ProntonetProtocol.connect())
         self.__command_socket.recv(1024)
         self.__command_socket.send(command.command)
-        data = self.__command_socket.recv(1024)
+        data = self.__command_socket.recv(2048)
         self.__command_socket.close()
         pattern = command.unpack_pattern
         if '#' in pattern:
