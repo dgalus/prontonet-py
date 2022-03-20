@@ -53,11 +53,13 @@ class StatusAlarmsStatusChanged:
 @dataclass
 class StatusDecoderAudioModeChanged:
     codec: Codec
+    name: str
 
 
 @dataclass
 class StatusEncoderAudioModeChanged:
     codec: Codec
+    name: str
 
 
 @dataclass
