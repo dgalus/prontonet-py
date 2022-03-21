@@ -11,8 +11,63 @@ from prontonet.enums import Command, AlarmStatus, LineStatus, IPCallType, Codec
 
 
 class ProntonetDevice:
+    """
+    A class used to represent Prontonet Device.
+
+    ...
+
+    Attributes
+    ----------
+    ip : str
+        IP address of Prontonet device.
+    port : int
+        Port number of command protocol.
+    status_port : int
+        Port number of status protocol.
+
+    Methods
+    -------
+    connect()
+        Connects to status protocol socket and starts listening for messages.
+
+    disconnect()
+        Disconnects from status protocol socket.
+
+    attach_on_connected(func, *args)
+        Method to attach function, which will be executed after status socket connected.
+
+    attach_on_status_socket_disconnected(func, *args)
+        Method to attach function, which will be executed after status socket disconnected.
+
+    attach_on_line_status_changed(func, *args)
+        Method to attach function, which will be executed after line status changed.
+
+    attach_on_alarm_status_changed(func, *args)
+        Method to attach function, which will be executed after alarm status changed.
+
+    attach_on_decoder_audio_mode_changed(func, *args)
+        Method to attach function, which will be executed after decoder audio mode changed.
+
+    attach_on_encoder_audio_mode_changed(func, *args)
+        Method to attach function, which will be executed after encoder audio mode changed.
+
+    send_command(command: ProntonetCommand)
+        Send command to command protocol socket.
+
+    """
 
     def __init__(self, ip, port=50031, status_port=50035):
+        """
+        Parameters
+        ----------
+        ip : str
+            IP address of Prontonet device.
+        port : int
+            Port number of command protocol. (default is 50031)
+        status_port : int
+            Port number of status protocol. (default is 50035)
+        """
+
         self.__command_socket: socket.socket or None = None
         self.__status_socket: socket.socket or None = None
         self.__status_th: threading.Thread or None = None
@@ -36,6 +91,14 @@ class ProntonetDevice:
         self.__on_encoder_audio_mode_changed_args: tuple or None = None
 
     def connect(self) -> None:
+        """
+        Connects to status protocol socket and starts listening for messages.
+
+        Returns
+        -------
+        None
+        """
+
         self.__status_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         self.__status_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
@@ -52,6 +115,14 @@ class ProntonetDevice:
         self.__status_th.start()
 
     def __status_loop(self) -> None:
+        """
+        Listens for status change. When socket disconnects, attempts to reconnect.
+
+        Returns
+        -------
+        None
+        """
+
         connected = True
         while True:
             if not connected:
@@ -78,7 +149,19 @@ class ProntonetDevice:
                     self.__status_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                     connected = False
 
-    def __process_status_message(self, message: bytes):
+    def __process_status_message(self, message: bytes) -> None:
+        """
+        Processes status messages. If function is attached to event, this method executes it.
+
+        Parameters
+        ----------
+        message : bytes
+            Message received from status socket.
+        Returns
+        -------
+        None
+        """
+
         if message[0] == Command.STATUS_LINE_STATUS_CHANGED:
             if self.__on_line_status_changed is not None:
                 res = struct.unpack("<ii32sii", message[8:])
@@ -108,38 +191,165 @@ class ProntonetDevice:
             print("[!] Unknown status message received.")
 
     def disconnect(self) -> None:
+        """
+        Stops listening for status messages and closes status socket.
+
+        Returns
+        -------
+        None
+        """
+
         self.__status_th.join()
         self.__status_socket.close()
 
     def attach_on_connected(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after status socket connected.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when status socket is connected.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_connected = func
         self.__on_connected_args = args
 
     def attach_on_status_socket_disconnected(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after status socket disconnected.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when status socket is disconnected.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_status_socket_disconnected = func
         self.__on_status_socket_disconnected_args = args
 
     def attach_on_status_socket_reconnected(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after status socket reconnected.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when status socket is reconnected.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_status_socket_reconnected = func
         self.__on_status_socket_reconnected_args = args
 
     def attach_on_line_status_changed(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after line status changed.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when line status changed.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_line_status_changed = func
         self.__on_line_status_changed_args = args
 
     def attach_on_alarm_status_changed(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after alarm status changed.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when alarm status changed.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_alarm_status_changed = func
         self.__on_alarm_status_changed_args = args
 
     def attach_on_decoder_audio_mode_changed(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after decoder audio mode changed.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when decoder audio mode changed.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_decoder_audio_mode_changed = func
         self.__on_decoder_audio_mode_changed_args = args
 
     def attach_on_encoder_audio_mode_changed(self, func, *args) -> None:
+        """
+        Method to attach function, which will be executed after encoder audio mode changed.
+
+        Parameters
+        ----------
+        func
+            Function to be executed when encoder audio mode changed.
+        args
+            Function arguments.
+
+        Returns
+        -------
+        None
+        """
+
         self.__on_encoder_audio_mode_changed = func
         self.__on_encoder_audio_mode_changed_args = args
 
     def send_command(self, command: ProntonetCommand):
+        """
+        Sends command to command protocol socket.
+
+        Parameters
+        ----------
+        command : ProntonetCommand
+            Dataclass which contains command for Prontonet device (bytes),
+            struct.unpack() pattern for response and command response type.
+
+        Returns
+        -------
+        Structure passed to function as third argument of ProntonetCommand object.
+        """
+
         self.__command_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.__command_socket.connect((self.ip, self.port))
         self.__command_socket.send(ProntonetProtocol.connect())

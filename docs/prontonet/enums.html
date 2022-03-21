@@ -1,0 +1,2567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>prontonet.enums API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>prontonet.enums</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from enum import IntEnum
+
+
+class Command(IntEnum):
+    ALIVE = 0
+    CONNECT = 1
+    COMMAND_RESPONSE = 3
+
+    STATUS_DEVICE_NET_CHANGED = 10
+    STATUS_LINE_STATUS_CHANGED = 11
+    STATUS_ALARMS_STATUS_CHANGED = 12
+    STATUS_DECODER_AUDIO_MODE_CHANGED = 13
+    STATUS_ENCODER_AUDIO_MODE_CHANGED = 14
+
+    COMMAND_GET_DEVICE_NET = 100
+    COMMAND_SET_DEVICE_NET = 101
+    COMMAND_CALL = 102
+    COMMAND_HANG_UP = 103
+    COMMAND_GET_LINE_STATUS = 104
+    COMMAND_GET_VU_METERS = 105
+    COMMAND_GET_MONITORS = 106
+    COMMAND_ALARMS_GET_STATUS = 107
+    COMMAND_DECODER_GET_AUDIO_MODE = 108
+    COMMAND_ENCODER_GET_AUDIO_MODE = 109
+    COMMAND_ENCODER_SET_AUDIO_MODE_PCM = 110
+    COMMAND_ENCODER_SET_AUDIO_MODE_MPEG = 111
+    COMMAND_ENCODER_SET_AUDIO_MODE_AAC = 112
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711 = 113
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722 = 114
+    COMMAND_ENCODER_SET_AUDIO_MODE_AUTO = 115
+    COMMAND_ENCODER_SET_AUDIO_MODE_APTX = 116
+    COMMAND_GET_LINE_STATUS_DETAILS = 117
+    COMMAND_ANSWER = 118
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2 = 119
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2 = 120
+    COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2 = 121
+    COMMAND_IP_GET_STREAMING_PROTOCOL = 122
+    COMMAND_IP_SET_STREAMING_PROTOCOL = 123
+    COMMAND_X21_ENABLE_TX = 124
+    COMMAND_LOAD_PRESET = 125
+    COMMAND_CALL_FROM_BOOK = 126
+    COMMAND_ALARMS_ACK = 127
+    COMMAND_ALARMS_DELETE = 128
+    COMMAND_CALL_FROM_BOOK_ALL_LINES = 129
+    COMMAND_GET_DEVICE_NET_V2 = 130
+    COMMAND_SET_DEVICE_NET_V2 = 131
+    COMMAND_CALL_V2 = 132
+    COMMAND_GET_LOADED_PRESET_INDEX = 133
+    COMMAND_RUN_GPI_ACTION = 134
+    COMMAND_ENABLE_NET_BACKUP = 135
+    COMMAND_RESET_DEVICE = 136
+    COMMAND_GET_LOADED_PRESET_NAME = 137
+    COMMAND_GET_STREAMING_STATS = 138
+    COMMAND_GET_SIP_SERVER_REGISTER_STATUS = 139
+    COMMAND_GET_STUN_SERVER_REGISTER_STATUS = 140
+    COMMAND_GET_CALL_DURATION = 141
+    COMMAND_ALARMS_GET_LOG = 142
+    COMMAND_AUDIO_GET_CONFIGURATION = 143
+    COMMAND_AUDIO_SET_CONFIGURATION = 144
+    COMMAND_SYS_GET_DEVICE_NAME = 145
+    COMMAND_SYS_SET_DEVICE_NAME = 146
+    COMMAND_SYS_BLINK_DEVICE = 147
+    COMMAND_SYS_GET_VERSION_INFO = 148
+    COMMAND_SIP_GET_CONFIGURATION = 149
+    COMMAND_SIP_SET_CONFIGURATION = 150
+    COMMAND_PRODYS_V4_GET_CONFIGURATION = 151
+    COMMAND_PRODYS_V4_SET_CONFIGURATION = 152
+    COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION = 153
+    COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION = 154
+    COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION = 155
+    COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION = 156
+    COMMAND_GET_STREAMING_STATS_V2 = 157
+    COMMAND_ETHERNET_GET_SPEED = 158
+    COMMAND_STREAMING_STATS_RESET = 159
+    COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2 = 160
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3 = 161
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3 = 162
+    COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2 = 163
+    COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM = 164
+    COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM = 165
+    COMMAND_ENCODER_GET_AUDIO_MODE_AUTO = 166
+    COMMAND_ENCODER_GET_AUDIO_MODE_PCM = 167
+    COMMAND_ENCODER_GET_AUDIO_MODE_G711 = 168
+    COMMAND_ENCODER_GET_AUDIO_MODE_G722 = 169
+    COMMAND_ENCODER_GET_AUDIO_MODE_MPEG = 170
+    COMMAND_ENCODER_GET_AUDIO_MODE_AAC = 171
+    COMMAND_ENCODER_GET_AUDIO_MODE_APTX = 172
+    COMMAND_DECODER_GET_AUDIO_MODE_PCM = 173
+    COMMAND_DECODER_GET_AUDIO_MODE_G711 = 174
+    COMMAND_DECODER_GET_AUDIO_MODE_G722 = 175
+    COMMAND_DECODER_GET_AUDIO_MODE_MPEG = 176
+    COMMAND_DECODER_GET_AUDIO_MODE_AAC = 177
+    COMMAND_DECODER_GET_AUDIO_MODE_APTX = 178
+    COMMAND_ENCODER_SET_AUDIO_MODE_OPUS = 179
+    COMMAND_ENCODER_GET_AUDIO_MODE_OPUS = 180
+    COMMAND_DECODER_GET_AUDIO_MODE_OPUS = 181
+
+
+class AudioMode(IntEnum):
+    MONO = 1
+    STEREO = 2
+    JOINT = 3
+    DUAL = 4
+
+
+class BitsSample(IntEnum):
+    BITS_SAMPLE_16 = 16
+    BITS_SAMPLE_20 = 20
+    BITS_SAMPLE_24 = 24
+
+
+class EncoderMix(IntEnum):
+    NONE = 0
+    LR = 1
+    LR_3_DB = 2
+    LR_6_DB = 3
+
+
+class IPCallType(IntEnum):
+    UNICAST_BIDIRECTIONAL = 0
+    UNICAST_UNIDIRECTIONAL_TX = 1
+    MULTICAST_TX = 2
+    MULTICAST_RX = 3
+    UNICAST_UNIDIRECTIONAL_RX = 4
+
+
+class LineStatus(IntEnum):
+    NO_PHYSICAL_LINE = 0
+    DISCONNECTED = 1
+    DISCONNECTING = 2
+    CALLING = 3
+    RECEIVING_CALL = 4
+    CONNECTED_CALLED = 5
+    CONNECTED_RECEIVED = 6
+    CALL_REJECTED = 7
+    NOT_AVAILABLE = 8
+
+
+class BitRate(IntEnum):
+    BITRATE_FREE = 0
+    BITRATE_8_KBPS = 1000
+    BITRATE_16_KBPS = 2000
+    BITRATE_24_KBPS = 3000
+    BITRATE_32_KBPS = 4000
+    BITRATE_40_KBPS = 5000
+    BITRATE_48_KBPS = 6000
+    BITRATE_56_KBPS = 7000
+    BITRATE_64_KBPS = 8000
+    BITRATE_72_KBPS = 9000
+    BITRATE_80_KBPS = 10000
+    BITRATE_88_KBPS = 11000
+    BITRATE_96_KBPS = 12000
+    BITRATE_104_KBPS = 13000
+    BITRATE_112_KBPS = 14000
+    BITRATE_120_KBPS = 15000
+    BITRATE_128_KBPS = 16000
+    BITRATE_144_KBPS = 18000
+    BITRATE_160_KBPS = 20000
+    BITRATE_168_KBPS = 21000
+    BITRATE_192_KBPS = 24000
+    BITRATE_224_KBPS = 28000
+    BITRATE_240_KBPS = 30000
+    BITRATE_256_KBPS = 32000
+    BITRATE_280_KBPS = 35000
+    BITRATE_288_KBPS = 36000
+    BITRATE_320_KBPS = 40000
+    BITRATE_336_KBPS = 42000
+    BITRATE_384_KBPS = 48000
+    BITRATE_480_KBPS = 60000
+    BITRATE_576_KBPS = 72000
+
+
+class MPEGLayer(IntEnum):
+    L_NOT = 0
+    L1 = 1
+    L2 = 2
+    L3 = 3
+
+
+class Frequency(IntEnum):
+    FREQ_8000 = 8000
+    FREQ_11025 = 11025
+    FREQ_12000 = 12000
+    FREQ_16000 = 16000
+    FREQ_22050 = 22050
+    FREQ_24000 = 24000
+    FREQ_32000 = 32000
+    FREQ_44100 = 44100
+    FREQ_48000 = 48000
+
+
+class AACMode(IntEnum):
+    MPEG2_LC = 5
+    MPEG4_LC = 6
+    MPEG4_ER_LD = 7
+    MPEG4_HE = 8
+    MPEG_ELD = 10
+
+
+class APTXType(IntEnum):
+    STANDARD = 0
+    ENHANCED_16_BITS = 1
+    ENHANCED_20_BITS = 2
+    ENHANCED_24_BITS = 3
+
+
+class BondingType(IntEnum):
+    NONE = 0
+    CCSTELOS = 1
+    J52 = 2
+
+
+class DeviceNet(IntEnum):
+    IP = 0
+    ISDN = 1
+    X21 = 2
+    NONE = 3
+    PSTN = 4
+
+
+class G711Law(IntEnum):
+    A = 0
+    MU = 1
+
+
+class MPEGL3Polarity(IntEnum):
+    NORMATIVE = 0
+    INVERSE = 1
+
+
+class StreamingProtocol(IntEnum):
+    PRODYS = 0
+    SIP = 1
+    SAP = 2
+    PRODYS_V2 = 3
+    CCS = 4
+    RTP = 5
+    PRODYS_V3 = 6
+    PRODYS_V4 = 7
+
+
+class DeviceSubNet(IntEnum):
+    DEVICE_SUBNET_NONE = 0
+    DEVICE_SUBNET_ETHERNET = 1
+    DEVICE_SUBNET_3G = 2
+
+
+class ProntoNetCodecMode(IntEnum):
+    SIMPLE = 0
+    DOUBLE = 1
+
+
+class Codec(IntEnum):
+    CODEC_1 = 0
+    CODEC_2 = 1
+    CODEC_MAX = 2
+    CODEC_NONE = 3
+
+
+class AlarmStatus(IntEnum):
+    NONE = 0
+    ALARM_ACTIVE = 1
+    ALARM_HISTORY = 2
+
+
+class AudioConfig(IntEnum):
+    ANALOG = 0
+    ANALOG_EXTERNAL_SYNC = 1
+    AESEBU_AUDIO_SYNC = 2
+    AESEBU_EXTERNAL_SYNC = 3
+    AESEBU_INTERNAL_SYNC = 4
+    AESEBU_TRANSPARENT = 5
+    AESEBU_UBIT_MASTER = 6
+    AESEBU_UBIT_SLAVE = 7
+
+
+class SIPAddressType(IntEnum):
+    LOCAL = 0
+    PUBLIC = 1
+    STUN = 2
+
+
+class AudioAlgorithm(IntEnum):
+    PCM = 0
+    G711 = 1
+    G722 = 2
+    MPEG_LAYER_2 = 3
+    MPEG_LAYER_3 = 4
+    MPEG2_AAC_LC = 5
+    MPEG4_AAC_LC = 6
+    MPEG4_AAC_LD = 7
+    MPEG4_AAC_HE = 8
+    MPEG4_AAC_ELD = 9
+    APTX = 10
+    APTX_ENH_16_BITS = 11
+    APTX_ENH_20_BITS = 12
+    APTX_ENH_24_BITS = 13
+
+
+class EthernetInterface(IntEnum):
+    LAN_1 = 0
+    LAN_2 = 1
+
+
+class EthernetNegotiatedSpeed(IntEnum):
+    LINK_DOWN = 0
+    SPEED_10_MB_HALF_DUPLEX = 1
+    SPEED_10_MB_FULL_DUPLEX = 2
+    SPEED_100_MB_HALF_DUPLEX = 3
+    SPEED_100_MB_FULL_DUPLEX = 4
+
+
+class AudioModeAlgorithm(IntEnum):
+    PCM = 0
+    MPEG = 1
+    AAC = 2
+    G711 = 3
+    G722 = 4
+    AUTO = 5
+    APTX = 6
+
+
+class Acknowledge(IntEnum):
+    ERROR = 0
+    SUCCESS = 1</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="prontonet.enums.AACMode"><code class="flex name class">
+<span>class <span class="ident">AACMode</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AACMode(IntEnum):
+    MPEG2_LC = 5
+    MPEG4_LC = 6
+    MPEG4_ER_LD = 7
+    MPEG4_HE = 8
+    MPEG_ELD = 10</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AACMode.MPEG2_LC"><code class="name">var <span class="ident">MPEG2_LC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AACMode.MPEG4_ER_LD"><code class="name">var <span class="ident">MPEG4_ER_LD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AACMode.MPEG4_HE"><code class="name">var <span class="ident">MPEG4_HE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AACMode.MPEG4_LC"><code class="name">var <span class="ident">MPEG4_LC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AACMode.MPEG_ELD"><code class="name">var <span class="ident">MPEG_ELD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.APTXType"><code class="flex name class">
+<span>class <span class="ident">APTXType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class APTXType(IntEnum):
+    STANDARD = 0
+    ENHANCED_16_BITS = 1
+    ENHANCED_20_BITS = 2
+    ENHANCED_24_BITS = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.APTXType.ENHANCED_16_BITS"><code class="name">var <span class="ident">ENHANCED_16_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.APTXType.ENHANCED_20_BITS"><code class="name">var <span class="ident">ENHANCED_20_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.APTXType.ENHANCED_24_BITS"><code class="name">var <span class="ident">ENHANCED_24_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.APTXType.STANDARD"><code class="name">var <span class="ident">STANDARD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.Acknowledge"><code class="flex name class">
+<span>class <span class="ident">Acknowledge</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Acknowledge(IntEnum):
+    ERROR = 0
+    SUCCESS = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.Acknowledge.ERROR"><code class="name">var <span class="ident">ERROR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Acknowledge.SUCCESS"><code class="name">var <span class="ident">SUCCESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.AlarmStatus"><code class="flex name class">
+<span>class <span class="ident">AlarmStatus</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AlarmStatus(IntEnum):
+    NONE = 0
+    ALARM_ACTIVE = 1
+    ALARM_HISTORY = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AlarmStatus.ALARM_ACTIVE"><code class="name">var <span class="ident">ALARM_ACTIVE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AlarmStatus.ALARM_HISTORY"><code class="name">var <span class="ident">ALARM_HISTORY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AlarmStatus.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm"><code class="flex name class">
+<span>class <span class="ident">AudioAlgorithm</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioAlgorithm(IntEnum):
+    PCM = 0
+    G711 = 1
+    G722 = 2
+    MPEG_LAYER_2 = 3
+    MPEG_LAYER_3 = 4
+    MPEG2_AAC_LC = 5
+    MPEG4_AAC_LC = 6
+    MPEG4_AAC_LD = 7
+    MPEG4_AAC_HE = 8
+    MPEG4_AAC_ELD = 9
+    APTX = 10
+    APTX_ENH_16_BITS = 11
+    APTX_ENH_20_BITS = 12
+    APTX_ENH_24_BITS = 13</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AudioAlgorithm.APTX"><code class="name">var <span class="ident">APTX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.APTX_ENH_16_BITS"><code class="name">var <span class="ident">APTX_ENH_16_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.APTX_ENH_20_BITS"><code class="name">var <span class="ident">APTX_ENH_20_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.APTX_ENH_24_BITS"><code class="name">var <span class="ident">APTX_ENH_24_BITS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.G711"><code class="name">var <span class="ident">G711</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.G722"><code class="name">var <span class="ident">G722</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG2_AAC_LC"><code class="name">var <span class="ident">MPEG2_AAC_LC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG4_AAC_ELD"><code class="name">var <span class="ident">MPEG4_AAC_ELD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG4_AAC_HE"><code class="name">var <span class="ident">MPEG4_AAC_HE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG4_AAC_LC"><code class="name">var <span class="ident">MPEG4_AAC_LC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG4_AAC_LD"><code class="name">var <span class="ident">MPEG4_AAC_LD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG_LAYER_2"><code class="name">var <span class="ident">MPEG_LAYER_2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.MPEG_LAYER_3"><code class="name">var <span class="ident">MPEG_LAYER_3</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioAlgorithm.PCM"><code class="name">var <span class="ident">PCM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.AudioConfig"><code class="flex name class">
+<span>class <span class="ident">AudioConfig</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioConfig(IntEnum):
+    ANALOG = 0
+    ANALOG_EXTERNAL_SYNC = 1
+    AESEBU_AUDIO_SYNC = 2
+    AESEBU_EXTERNAL_SYNC = 3
+    AESEBU_INTERNAL_SYNC = 4
+    AESEBU_TRANSPARENT = 5
+    AESEBU_UBIT_MASTER = 6
+    AESEBU_UBIT_SLAVE = 7</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AudioConfig.AESEBU_AUDIO_SYNC"><code class="name">var <span class="ident">AESEBU_AUDIO_SYNC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.AESEBU_EXTERNAL_SYNC"><code class="name">var <span class="ident">AESEBU_EXTERNAL_SYNC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.AESEBU_INTERNAL_SYNC"><code class="name">var <span class="ident">AESEBU_INTERNAL_SYNC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.AESEBU_TRANSPARENT"><code class="name">var <span class="ident">AESEBU_TRANSPARENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.AESEBU_UBIT_MASTER"><code class="name">var <span class="ident">AESEBU_UBIT_MASTER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.AESEBU_UBIT_SLAVE"><code class="name">var <span class="ident">AESEBU_UBIT_SLAVE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.ANALOG"><code class="name">var <span class="ident">ANALOG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioConfig.ANALOG_EXTERNAL_SYNC"><code class="name">var <span class="ident">ANALOG_EXTERNAL_SYNC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.AudioMode"><code class="flex name class">
+<span>class <span class="ident">AudioMode</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioMode(IntEnum):
+    MONO = 1
+    STEREO = 2
+    JOINT = 3
+    DUAL = 4</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AudioMode.DUAL"><code class="name">var <span class="ident">DUAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioMode.JOINT"><code class="name">var <span class="ident">JOINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioMode.MONO"><code class="name">var <span class="ident">MONO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioMode.STEREO"><code class="name">var <span class="ident">STEREO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm"><code class="flex name class">
+<span>class <span class="ident">AudioModeAlgorithm</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioModeAlgorithm(IntEnum):
+    PCM = 0
+    MPEG = 1
+    AAC = 2
+    G711 = 3
+    G722 = 4
+    AUTO = 5
+    APTX = 6</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.AudioModeAlgorithm.AAC"><code class="name">var <span class="ident">AAC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.APTX"><code class="name">var <span class="ident">APTX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.AUTO"><code class="name">var <span class="ident">AUTO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.G711"><code class="name">var <span class="ident">G711</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.G722"><code class="name">var <span class="ident">G722</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.MPEG"><code class="name">var <span class="ident">MPEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.AudioModeAlgorithm.PCM"><code class="name">var <span class="ident">PCM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.BitRate"><code class="flex name class">
+<span>class <span class="ident">BitRate</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BitRate(IntEnum):
+    BITRATE_FREE = 0
+    BITRATE_8_KBPS = 1000
+    BITRATE_16_KBPS = 2000
+    BITRATE_24_KBPS = 3000
+    BITRATE_32_KBPS = 4000
+    BITRATE_40_KBPS = 5000
+    BITRATE_48_KBPS = 6000
+    BITRATE_56_KBPS = 7000
+    BITRATE_64_KBPS = 8000
+    BITRATE_72_KBPS = 9000
+    BITRATE_80_KBPS = 10000
+    BITRATE_88_KBPS = 11000
+    BITRATE_96_KBPS = 12000
+    BITRATE_104_KBPS = 13000
+    BITRATE_112_KBPS = 14000
+    BITRATE_120_KBPS = 15000
+    BITRATE_128_KBPS = 16000
+    BITRATE_144_KBPS = 18000
+    BITRATE_160_KBPS = 20000
+    BITRATE_168_KBPS = 21000
+    BITRATE_192_KBPS = 24000
+    BITRATE_224_KBPS = 28000
+    BITRATE_240_KBPS = 30000
+    BITRATE_256_KBPS = 32000
+    BITRATE_280_KBPS = 35000
+    BITRATE_288_KBPS = 36000
+    BITRATE_320_KBPS = 40000
+    BITRATE_336_KBPS = 42000
+    BITRATE_384_KBPS = 48000
+    BITRATE_480_KBPS = 60000
+    BITRATE_576_KBPS = 72000</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.BitRate.BITRATE_104_KBPS"><code class="name">var <span class="ident">BITRATE_104_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_112_KBPS"><code class="name">var <span class="ident">BITRATE_112_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_120_KBPS"><code class="name">var <span class="ident">BITRATE_120_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_128_KBPS"><code class="name">var <span class="ident">BITRATE_128_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_144_KBPS"><code class="name">var <span class="ident">BITRATE_144_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_160_KBPS"><code class="name">var <span class="ident">BITRATE_160_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_168_KBPS"><code class="name">var <span class="ident">BITRATE_168_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_16_KBPS"><code class="name">var <span class="ident">BITRATE_16_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_192_KBPS"><code class="name">var <span class="ident">BITRATE_192_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_224_KBPS"><code class="name">var <span class="ident">BITRATE_224_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_240_KBPS"><code class="name">var <span class="ident">BITRATE_240_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_24_KBPS"><code class="name">var <span class="ident">BITRATE_24_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_256_KBPS"><code class="name">var <span class="ident">BITRATE_256_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_280_KBPS"><code class="name">var <span class="ident">BITRATE_280_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_288_KBPS"><code class="name">var <span class="ident">BITRATE_288_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_320_KBPS"><code class="name">var <span class="ident">BITRATE_320_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_32_KBPS"><code class="name">var <span class="ident">BITRATE_32_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_336_KBPS"><code class="name">var <span class="ident">BITRATE_336_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_384_KBPS"><code class="name">var <span class="ident">BITRATE_384_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_40_KBPS"><code class="name">var <span class="ident">BITRATE_40_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_480_KBPS"><code class="name">var <span class="ident">BITRATE_480_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_48_KBPS"><code class="name">var <span class="ident">BITRATE_48_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_56_KBPS"><code class="name">var <span class="ident">BITRATE_56_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_576_KBPS"><code class="name">var <span class="ident">BITRATE_576_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_64_KBPS"><code class="name">var <span class="ident">BITRATE_64_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_72_KBPS"><code class="name">var <span class="ident">BITRATE_72_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_80_KBPS"><code class="name">var <span class="ident">BITRATE_80_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_88_KBPS"><code class="name">var <span class="ident">BITRATE_88_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_8_KBPS"><code class="name">var <span class="ident">BITRATE_8_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_96_KBPS"><code class="name">var <span class="ident">BITRATE_96_KBPS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitRate.BITRATE_FREE"><code class="name">var <span class="ident">BITRATE_FREE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.BitsSample"><code class="flex name class">
+<span>class <span class="ident">BitsSample</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BitsSample(IntEnum):
+    BITS_SAMPLE_16 = 16
+    BITS_SAMPLE_20 = 20
+    BITS_SAMPLE_24 = 24</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.BitsSample.BITS_SAMPLE_16"><code class="name">var <span class="ident">BITS_SAMPLE_16</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitsSample.BITS_SAMPLE_20"><code class="name">var <span class="ident">BITS_SAMPLE_20</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BitsSample.BITS_SAMPLE_24"><code class="name">var <span class="ident">BITS_SAMPLE_24</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.BondingType"><code class="flex name class">
+<span>class <span class="ident">BondingType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BondingType(IntEnum):
+    NONE = 0
+    CCSTELOS = 1
+    J52 = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.BondingType.CCSTELOS"><code class="name">var <span class="ident">CCSTELOS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BondingType.J52"><code class="name">var <span class="ident">J52</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.BondingType.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.Codec"><code class="flex name class">
+<span>class <span class="ident">Codec</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Codec(IntEnum):
+    CODEC_1 = 0
+    CODEC_2 = 1
+    CODEC_MAX = 2
+    CODEC_NONE = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.Codec.CODEC_1"><code class="name">var <span class="ident">CODEC_1</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Codec.CODEC_2"><code class="name">var <span class="ident">CODEC_2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Codec.CODEC_MAX"><code class="name">var <span class="ident">CODEC_MAX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Codec.CODEC_NONE"><code class="name">var <span class="ident">CODEC_NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.Command"><code class="flex name class">
+<span>class <span class="ident">Command</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Command(IntEnum):
+    ALIVE = 0
+    CONNECT = 1
+    COMMAND_RESPONSE = 3
+
+    STATUS_DEVICE_NET_CHANGED = 10
+    STATUS_LINE_STATUS_CHANGED = 11
+    STATUS_ALARMS_STATUS_CHANGED = 12
+    STATUS_DECODER_AUDIO_MODE_CHANGED = 13
+    STATUS_ENCODER_AUDIO_MODE_CHANGED = 14
+
+    COMMAND_GET_DEVICE_NET = 100
+    COMMAND_SET_DEVICE_NET = 101
+    COMMAND_CALL = 102
+    COMMAND_HANG_UP = 103
+    COMMAND_GET_LINE_STATUS = 104
+    COMMAND_GET_VU_METERS = 105
+    COMMAND_GET_MONITORS = 106
+    COMMAND_ALARMS_GET_STATUS = 107
+    COMMAND_DECODER_GET_AUDIO_MODE = 108
+    COMMAND_ENCODER_GET_AUDIO_MODE = 109
+    COMMAND_ENCODER_SET_AUDIO_MODE_PCM = 110
+    COMMAND_ENCODER_SET_AUDIO_MODE_MPEG = 111
+    COMMAND_ENCODER_SET_AUDIO_MODE_AAC = 112
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711 = 113
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722 = 114
+    COMMAND_ENCODER_SET_AUDIO_MODE_AUTO = 115
+    COMMAND_ENCODER_SET_AUDIO_MODE_APTX = 116
+    COMMAND_GET_LINE_STATUS_DETAILS = 117
+    COMMAND_ANSWER = 118
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2 = 119
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2 = 120
+    COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2 = 121
+    COMMAND_IP_GET_STREAMING_PROTOCOL = 122
+    COMMAND_IP_SET_STREAMING_PROTOCOL = 123
+    COMMAND_X21_ENABLE_TX = 124
+    COMMAND_LOAD_PRESET = 125
+    COMMAND_CALL_FROM_BOOK = 126
+    COMMAND_ALARMS_ACK = 127
+    COMMAND_ALARMS_DELETE = 128
+    COMMAND_CALL_FROM_BOOK_ALL_LINES = 129
+    COMMAND_GET_DEVICE_NET_V2 = 130
+    COMMAND_SET_DEVICE_NET_V2 = 131
+    COMMAND_CALL_V2 = 132
+    COMMAND_GET_LOADED_PRESET_INDEX = 133
+    COMMAND_RUN_GPI_ACTION = 134
+    COMMAND_ENABLE_NET_BACKUP = 135
+    COMMAND_RESET_DEVICE = 136
+    COMMAND_GET_LOADED_PRESET_NAME = 137
+    COMMAND_GET_STREAMING_STATS = 138
+    COMMAND_GET_SIP_SERVER_REGISTER_STATUS = 139
+    COMMAND_GET_STUN_SERVER_REGISTER_STATUS = 140
+    COMMAND_GET_CALL_DURATION = 141
+    COMMAND_ALARMS_GET_LOG = 142
+    COMMAND_AUDIO_GET_CONFIGURATION = 143
+    COMMAND_AUDIO_SET_CONFIGURATION = 144
+    COMMAND_SYS_GET_DEVICE_NAME = 145
+    COMMAND_SYS_SET_DEVICE_NAME = 146
+    COMMAND_SYS_BLINK_DEVICE = 147
+    COMMAND_SYS_GET_VERSION_INFO = 148
+    COMMAND_SIP_GET_CONFIGURATION = 149
+    COMMAND_SIP_SET_CONFIGURATION = 150
+    COMMAND_PRODYS_V4_GET_CONFIGURATION = 151
+    COMMAND_PRODYS_V4_SET_CONFIGURATION = 152
+    COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION = 153
+    COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION = 154
+    COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION = 155
+    COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION = 156
+    COMMAND_GET_STREAMING_STATS_V2 = 157
+    COMMAND_ETHERNET_GET_SPEED = 158
+    COMMAND_STREAMING_STATS_RESET = 159
+    COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2 = 160
+    COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3 = 161
+    COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3 = 162
+    COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2 = 163
+    COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM = 164
+    COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM = 165
+    COMMAND_ENCODER_GET_AUDIO_MODE_AUTO = 166
+    COMMAND_ENCODER_GET_AUDIO_MODE_PCM = 167
+    COMMAND_ENCODER_GET_AUDIO_MODE_G711 = 168
+    COMMAND_ENCODER_GET_AUDIO_MODE_G722 = 169
+    COMMAND_ENCODER_GET_AUDIO_MODE_MPEG = 170
+    COMMAND_ENCODER_GET_AUDIO_MODE_AAC = 171
+    COMMAND_ENCODER_GET_AUDIO_MODE_APTX = 172
+    COMMAND_DECODER_GET_AUDIO_MODE_PCM = 173
+    COMMAND_DECODER_GET_AUDIO_MODE_G711 = 174
+    COMMAND_DECODER_GET_AUDIO_MODE_G722 = 175
+    COMMAND_DECODER_GET_AUDIO_MODE_MPEG = 176
+    COMMAND_DECODER_GET_AUDIO_MODE_AAC = 177
+    COMMAND_DECODER_GET_AUDIO_MODE_APTX = 178
+    COMMAND_ENCODER_SET_AUDIO_MODE_OPUS = 179
+    COMMAND_ENCODER_GET_AUDIO_MODE_OPUS = 180
+    COMMAND_DECODER_GET_AUDIO_MODE_OPUS = 181</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.Command.ALIVE"><code class="name">var <span class="ident">ALIVE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ALARMS_ACK"><code class="name">var <span class="ident">COMMAND_ALARMS_ACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ALARMS_DELETE"><code class="name">var <span class="ident">COMMAND_ALARMS_DELETE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ALARMS_GET_LOG"><code class="name">var <span class="ident">COMMAND_ALARMS_GET_LOG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ALARMS_GET_STATUS"><code class="name">var <span class="ident">COMMAND_ALARMS_GET_STATUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ANSWER"><code class="name">var <span class="ident">COMMAND_ANSWER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_AUDIO_GET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_AUDIO_GET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_AUDIO_SET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_AUDIO_SET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_CALL"><code class="name">var <span class="ident">COMMAND_CALL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_CALL_FROM_BOOK"><code class="name">var <span class="ident">COMMAND_CALL_FROM_BOOK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_CALL_FROM_BOOK_ALL_LINES"><code class="name">var <span class="ident">COMMAND_CALL_FROM_BOOK_ALL_LINES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_CALL_V2"><code class="name">var <span class="ident">COMMAND_CALL_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_AAC"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_AAC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_APTX"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_APTX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G711"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_G711</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G722"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_G722</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_MPEG"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_MPEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_OPUS"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_OPUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_PCM"><code class="name">var <span class="ident">COMMAND_DECODER_GET_AUDIO_MODE_PCM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENABLE_NET_BACKUP"><code class="name">var <span class="ident">COMMAND_ENABLE_NET_BACKUP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AAC"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_AAC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_APTX"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_APTX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AUTO"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_AUTO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G711"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_G711</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G722"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_G722</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_MPEG"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_MPEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_OPUS"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_OPUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_PCM"><code class="name">var <span class="ident">COMMAND_ENCODER_GET_AUDIO_MODE_PCM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AAC"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_AAC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_APTX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AUTO"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_AUTO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G711</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G722</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_MPEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_OPUS"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_OPUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_PCM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2"><code class="name">var <span class="ident">COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_ETHERNET_GET_SPEED"><code class="name">var <span class="ident">COMMAND_ETHERNET_GET_SPEED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_CALL_DURATION"><code class="name">var <span class="ident">COMMAND_GET_CALL_DURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_DEVICE_NET"><code class="name">var <span class="ident">COMMAND_GET_DEVICE_NET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_DEVICE_NET_V2"><code class="name">var <span class="ident">COMMAND_GET_DEVICE_NET_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_LINE_STATUS"><code class="name">var <span class="ident">COMMAND_GET_LINE_STATUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_LINE_STATUS_DETAILS"><code class="name">var <span class="ident">COMMAND_GET_LINE_STATUS_DETAILS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_INDEX"><code class="name">var <span class="ident">COMMAND_GET_LOADED_PRESET_INDEX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_NAME"><code class="name">var <span class="ident">COMMAND_GET_LOADED_PRESET_NAME</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_MONITORS"><code class="name">var <span class="ident">COMMAND_GET_MONITORS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_SIP_SERVER_REGISTER_STATUS"><code class="name">var <span class="ident">COMMAND_GET_SIP_SERVER_REGISTER_STATUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_STREAMING_STATS"><code class="name">var <span class="ident">COMMAND_GET_STREAMING_STATS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_STREAMING_STATS_V2"><code class="name">var <span class="ident">COMMAND_GET_STREAMING_STATS_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_STUN_SERVER_REGISTER_STATUS"><code class="name">var <span class="ident">COMMAND_GET_STUN_SERVER_REGISTER_STATUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_GET_VU_METERS"><code class="name">var <span class="ident">COMMAND_GET_VU_METERS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_HANG_UP"><code class="name">var <span class="ident">COMMAND_HANG_UP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_IP_GET_STREAMING_PROTOCOL"><code class="name">var <span class="ident">COMMAND_IP_GET_STREAMING_PROTOCOL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_IP_SET_STREAMING_PROTOCOL"><code class="name">var <span class="ident">COMMAND_IP_SET_STREAMING_PROTOCOL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_LOAD_PRESET"><code class="name">var <span class="ident">COMMAND_LOAD_PRESET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_PRODYS_V4_GET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_PRODYS_V4_GET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_PRODYS_V4_SET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_PRODYS_V4_SET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_RESET_DEVICE"><code class="name">var <span class="ident">COMMAND_RESET_DEVICE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_RESPONSE"><code class="name">var <span class="ident">COMMAND_RESPONSE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_RUN_GPI_ACTION"><code class="name">var <span class="ident">COMMAND_RUN_GPI_ACTION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SET_DEVICE_NET"><code class="name">var <span class="ident">COMMAND_SET_DEVICE_NET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SET_DEVICE_NET_V2"><code class="name">var <span class="ident">COMMAND_SET_DEVICE_NET_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SIP_GET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_SIP_GET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SIP_SET_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_SIP_SET_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_STREAMING_STATS_RESET"><code class="name">var <span class="ident">COMMAND_STREAMING_STATS_RESET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION"><code class="name">var <span class="ident">COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SYS_BLINK_DEVICE"><code class="name">var <span class="ident">COMMAND_SYS_BLINK_DEVICE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SYS_GET_DEVICE_NAME"><code class="name">var <span class="ident">COMMAND_SYS_GET_DEVICE_NAME</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SYS_GET_VERSION_INFO"><code class="name">var <span class="ident">COMMAND_SYS_GET_VERSION_INFO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_SYS_SET_DEVICE_NAME"><code class="name">var <span class="ident">COMMAND_SYS_SET_DEVICE_NAME</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.COMMAND_X21_ENABLE_TX"><code class="name">var <span class="ident">COMMAND_X21_ENABLE_TX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.CONNECT"><code class="name">var <span class="ident">CONNECT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.STATUS_ALARMS_STATUS_CHANGED"><code class="name">var <span class="ident">STATUS_ALARMS_STATUS_CHANGED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.STATUS_DECODER_AUDIO_MODE_CHANGED"><code class="name">var <span class="ident">STATUS_DECODER_AUDIO_MODE_CHANGED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.STATUS_DEVICE_NET_CHANGED"><code class="name">var <span class="ident">STATUS_DEVICE_NET_CHANGED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.STATUS_ENCODER_AUDIO_MODE_CHANGED"><code class="name">var <span class="ident">STATUS_ENCODER_AUDIO_MODE_CHANGED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Command.STATUS_LINE_STATUS_CHANGED"><code class="name">var <span class="ident">STATUS_LINE_STATUS_CHANGED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.DeviceNet"><code class="flex name class">
+<span>class <span class="ident">DeviceNet</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeviceNet(IntEnum):
+    IP = 0
+    ISDN = 1
+    X21 = 2
+    NONE = 3
+    PSTN = 4</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.DeviceNet.IP"><code class="name">var <span class="ident">IP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceNet.ISDN"><code class="name">var <span class="ident">ISDN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceNet.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceNet.PSTN"><code class="name">var <span class="ident">PSTN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceNet.X21"><code class="name">var <span class="ident">X21</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.DeviceSubNet"><code class="flex name class">
+<span>class <span class="ident">DeviceSubNet</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeviceSubNet(IntEnum):
+    DEVICE_SUBNET_NONE = 0
+    DEVICE_SUBNET_ETHERNET = 1
+    DEVICE_SUBNET_3G = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_3G"><code class="name">var <span class="ident">DEVICE_SUBNET_3G</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_ETHERNET"><code class="name">var <span class="ident">DEVICE_SUBNET_ETHERNET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_NONE"><code class="name">var <span class="ident">DEVICE_SUBNET_NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.EncoderMix"><code class="flex name class">
+<span>class <span class="ident">EncoderMix</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EncoderMix(IntEnum):
+    NONE = 0
+    LR = 1
+    LR_3_DB = 2
+    LR_6_DB = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.EncoderMix.LR"><code class="name">var <span class="ident">LR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EncoderMix.LR_3_DB"><code class="name">var <span class="ident">LR_3_DB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EncoderMix.LR_6_DB"><code class="name">var <span class="ident">LR_6_DB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EncoderMix.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.EthernetInterface"><code class="flex name class">
+<span>class <span class="ident">EthernetInterface</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EthernetInterface(IntEnum):
+    LAN_1 = 0
+    LAN_2 = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.EthernetInterface.LAN_1"><code class="name">var <span class="ident">LAN_1</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EthernetInterface.LAN_2"><code class="name">var <span class="ident">LAN_2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed"><code class="flex name class">
+<span>class <span class="ident">EthernetNegotiatedSpeed</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EthernetNegotiatedSpeed(IntEnum):
+    LINK_DOWN = 0
+    SPEED_10_MB_HALF_DUPLEX = 1
+    SPEED_10_MB_FULL_DUPLEX = 2
+    SPEED_100_MB_HALF_DUPLEX = 3
+    SPEED_100_MB_FULL_DUPLEX = 4</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed.LINK_DOWN"><code class="name">var <span class="ident">LINK_DOWN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_FULL_DUPLEX"><code class="name">var <span class="ident">SPEED_100_MB_FULL_DUPLEX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_HALF_DUPLEX"><code class="name">var <span class="ident">SPEED_100_MB_HALF_DUPLEX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_FULL_DUPLEX"><code class="name">var <span class="ident">SPEED_10_MB_FULL_DUPLEX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_HALF_DUPLEX"><code class="name">var <span class="ident">SPEED_10_MB_HALF_DUPLEX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.Frequency"><code class="flex name class">
+<span>class <span class="ident">Frequency</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Frequency(IntEnum):
+    FREQ_8000 = 8000
+    FREQ_11025 = 11025
+    FREQ_12000 = 12000
+    FREQ_16000 = 16000
+    FREQ_22050 = 22050
+    FREQ_24000 = 24000
+    FREQ_32000 = 32000
+    FREQ_44100 = 44100
+    FREQ_48000 = 48000</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.Frequency.FREQ_11025"><code class="name">var <span class="ident">FREQ_11025</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_12000"><code class="name">var <span class="ident">FREQ_12000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_16000"><code class="name">var <span class="ident">FREQ_16000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_22050"><code class="name">var <span class="ident">FREQ_22050</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_24000"><code class="name">var <span class="ident">FREQ_24000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_32000"><code class="name">var <span class="ident">FREQ_32000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_44100"><code class="name">var <span class="ident">FREQ_44100</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_48000"><code class="name">var <span class="ident">FREQ_48000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.Frequency.FREQ_8000"><code class="name">var <span class="ident">FREQ_8000</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.G711Law"><code class="flex name class">
+<span>class <span class="ident">G711Law</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class G711Law(IntEnum):
+    A = 0
+    MU = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.G711Law.A"><code class="name">var <span class="ident">A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.G711Law.MU"><code class="name">var <span class="ident">MU</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.IPCallType"><code class="flex name class">
+<span>class <span class="ident">IPCallType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IPCallType(IntEnum):
+    UNICAST_BIDIRECTIONAL = 0
+    UNICAST_UNIDIRECTIONAL_TX = 1
+    MULTICAST_TX = 2
+    MULTICAST_RX = 3
+    UNICAST_UNIDIRECTIONAL_RX = 4</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.IPCallType.MULTICAST_RX"><code class="name">var <span class="ident">MULTICAST_RX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.IPCallType.MULTICAST_TX"><code class="name">var <span class="ident">MULTICAST_TX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.IPCallType.UNICAST_BIDIRECTIONAL"><code class="name">var <span class="ident">UNICAST_BIDIRECTIONAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_RX"><code class="name">var <span class="ident">UNICAST_UNIDIRECTIONAL_RX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_TX"><code class="name">var <span class="ident">UNICAST_UNIDIRECTIONAL_TX</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.LineStatus"><code class="flex name class">
+<span>class <span class="ident">LineStatus</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LineStatus(IntEnum):
+    NO_PHYSICAL_LINE = 0
+    DISCONNECTED = 1
+    DISCONNECTING = 2
+    CALLING = 3
+    RECEIVING_CALL = 4
+    CONNECTED_CALLED = 5
+    CONNECTED_RECEIVED = 6
+    CALL_REJECTED = 7
+    NOT_AVAILABLE = 8</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.LineStatus.CALLING"><code class="name">var <span class="ident">CALLING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.CALL_REJECTED"><code class="name">var <span class="ident">CALL_REJECTED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.CONNECTED_CALLED"><code class="name">var <span class="ident">CONNECTED_CALLED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.CONNECTED_RECEIVED"><code class="name">var <span class="ident">CONNECTED_RECEIVED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.DISCONNECTED"><code class="name">var <span class="ident">DISCONNECTED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.DISCONNECTING"><code class="name">var <span class="ident">DISCONNECTING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.NOT_AVAILABLE"><code class="name">var <span class="ident">NOT_AVAILABLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.NO_PHYSICAL_LINE"><code class="name">var <span class="ident">NO_PHYSICAL_LINE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.LineStatus.RECEIVING_CALL"><code class="name">var <span class="ident">RECEIVING_CALL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.MPEGL3Polarity"><code class="flex name class">
+<span>class <span class="ident">MPEGL3Polarity</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MPEGL3Polarity(IntEnum):
+    NORMATIVE = 0
+    INVERSE = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.MPEGL3Polarity.INVERSE"><code class="name">var <span class="ident">INVERSE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.MPEGL3Polarity.NORMATIVE"><code class="name">var <span class="ident">NORMATIVE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.MPEGLayer"><code class="flex name class">
+<span>class <span class="ident">MPEGLayer</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MPEGLayer(IntEnum):
+    L_NOT = 0
+    L1 = 1
+    L2 = 2
+    L3 = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.MPEGLayer.L1"><code class="name">var <span class="ident">L1</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.MPEGLayer.L2"><code class="name">var <span class="ident">L2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.MPEGLayer.L3"><code class="name">var <span class="ident">L3</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.MPEGLayer.L_NOT"><code class="name">var <span class="ident">L_NOT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.ProntoNetCodecMode"><code class="flex name class">
+<span>class <span class="ident">ProntoNetCodecMode</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProntoNetCodecMode(IntEnum):
+    SIMPLE = 0
+    DOUBLE = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.ProntoNetCodecMode.DOUBLE"><code class="name">var <span class="ident">DOUBLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.ProntoNetCodecMode.SIMPLE"><code class="name">var <span class="ident">SIMPLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.SIPAddressType"><code class="flex name class">
+<span>class <span class="ident">SIPAddressType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SIPAddressType(IntEnum):
+    LOCAL = 0
+    PUBLIC = 1
+    STUN = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.SIPAddressType.LOCAL"><code class="name">var <span class="ident">LOCAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.SIPAddressType.PUBLIC"><code class="name">var <span class="ident">PUBLIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.SIPAddressType.STUN"><code class="name">var <span class="ident">STUN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol"><code class="flex name class">
+<span>class <span class="ident">StreamingProtocol</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StreamingProtocol(IntEnum):
+    PRODYS = 0
+    SIP = 1
+    SAP = 2
+    PRODYS_V2 = 3
+    CCS = 4
+    RTP = 5
+    PRODYS_V3 = 6
+    PRODYS_V4 = 7</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="prontonet.enums.StreamingProtocol.CCS"><code class="name">var <span class="ident">CCS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.PRODYS"><code class="name">var <span class="ident">PRODYS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.PRODYS_V2"><code class="name">var <span class="ident">PRODYS_V2</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.PRODYS_V3"><code class="name">var <span class="ident">PRODYS_V3</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.PRODYS_V4"><code class="name">var <span class="ident">PRODYS_V4</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.RTP"><code class="name">var <span class="ident">RTP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.SAP"><code class="name">var <span class="ident">SAP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="prontonet.enums.StreamingProtocol.SIP"><code class="name">var <span class="ident">SIP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="prontonet" href="index.html">prontonet</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="prontonet.enums.AACMode" href="#prontonet.enums.AACMode">AACMode</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.AACMode.MPEG2_LC" href="#prontonet.enums.AACMode.MPEG2_LC">MPEG2_LC</a></code></li>
+<li><code><a title="prontonet.enums.AACMode.MPEG4_ER_LD" href="#prontonet.enums.AACMode.MPEG4_ER_LD">MPEG4_ER_LD</a></code></li>
+<li><code><a title="prontonet.enums.AACMode.MPEG4_HE" href="#prontonet.enums.AACMode.MPEG4_HE">MPEG4_HE</a></code></li>
+<li><code><a title="prontonet.enums.AACMode.MPEG4_LC" href="#prontonet.enums.AACMode.MPEG4_LC">MPEG4_LC</a></code></li>
+<li><code><a title="prontonet.enums.AACMode.MPEG_ELD" href="#prontonet.enums.AACMode.MPEG_ELD">MPEG_ELD</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.APTXType" href="#prontonet.enums.APTXType">APTXType</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.APTXType.ENHANCED_16_BITS" href="#prontonet.enums.APTXType.ENHANCED_16_BITS">ENHANCED_16_BITS</a></code></li>
+<li><code><a title="prontonet.enums.APTXType.ENHANCED_20_BITS" href="#prontonet.enums.APTXType.ENHANCED_20_BITS">ENHANCED_20_BITS</a></code></li>
+<li><code><a title="prontonet.enums.APTXType.ENHANCED_24_BITS" href="#prontonet.enums.APTXType.ENHANCED_24_BITS">ENHANCED_24_BITS</a></code></li>
+<li><code><a title="prontonet.enums.APTXType.STANDARD" href="#prontonet.enums.APTXType.STANDARD">STANDARD</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.Acknowledge" href="#prontonet.enums.Acknowledge">Acknowledge</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.Acknowledge.ERROR" href="#prontonet.enums.Acknowledge.ERROR">ERROR</a></code></li>
+<li><code><a title="prontonet.enums.Acknowledge.SUCCESS" href="#prontonet.enums.Acknowledge.SUCCESS">SUCCESS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.AlarmStatus" href="#prontonet.enums.AlarmStatus">AlarmStatus</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.AlarmStatus.ALARM_ACTIVE" href="#prontonet.enums.AlarmStatus.ALARM_ACTIVE">ALARM_ACTIVE</a></code></li>
+<li><code><a title="prontonet.enums.AlarmStatus.ALARM_HISTORY" href="#prontonet.enums.AlarmStatus.ALARM_HISTORY">ALARM_HISTORY</a></code></li>
+<li><code><a title="prontonet.enums.AlarmStatus.NONE" href="#prontonet.enums.AlarmStatus.NONE">NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.AudioAlgorithm" href="#prontonet.enums.AudioAlgorithm">AudioAlgorithm</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.AudioAlgorithm.APTX" href="#prontonet.enums.AudioAlgorithm.APTX">APTX</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.APTX_ENH_16_BITS" href="#prontonet.enums.AudioAlgorithm.APTX_ENH_16_BITS">APTX_ENH_16_BITS</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.APTX_ENH_20_BITS" href="#prontonet.enums.AudioAlgorithm.APTX_ENH_20_BITS">APTX_ENH_20_BITS</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.APTX_ENH_24_BITS" href="#prontonet.enums.AudioAlgorithm.APTX_ENH_24_BITS">APTX_ENH_24_BITS</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.G711" href="#prontonet.enums.AudioAlgorithm.G711">G711</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.G722" href="#prontonet.enums.AudioAlgorithm.G722">G722</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG2_AAC_LC" href="#prontonet.enums.AudioAlgorithm.MPEG2_AAC_LC">MPEG2_AAC_LC</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG4_AAC_ELD" href="#prontonet.enums.AudioAlgorithm.MPEG4_AAC_ELD">MPEG4_AAC_ELD</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG4_AAC_HE" href="#prontonet.enums.AudioAlgorithm.MPEG4_AAC_HE">MPEG4_AAC_HE</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG4_AAC_LC" href="#prontonet.enums.AudioAlgorithm.MPEG4_AAC_LC">MPEG4_AAC_LC</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG4_AAC_LD" href="#prontonet.enums.AudioAlgorithm.MPEG4_AAC_LD">MPEG4_AAC_LD</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG_LAYER_2" href="#prontonet.enums.AudioAlgorithm.MPEG_LAYER_2">MPEG_LAYER_2</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.MPEG_LAYER_3" href="#prontonet.enums.AudioAlgorithm.MPEG_LAYER_3">MPEG_LAYER_3</a></code></li>
+<li><code><a title="prontonet.enums.AudioAlgorithm.PCM" href="#prontonet.enums.AudioAlgorithm.PCM">PCM</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.AudioConfig" href="#prontonet.enums.AudioConfig">AudioConfig</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_AUDIO_SYNC" href="#prontonet.enums.AudioConfig.AESEBU_AUDIO_SYNC">AESEBU_AUDIO_SYNC</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_EXTERNAL_SYNC" href="#prontonet.enums.AudioConfig.AESEBU_EXTERNAL_SYNC">AESEBU_EXTERNAL_SYNC</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_INTERNAL_SYNC" href="#prontonet.enums.AudioConfig.AESEBU_INTERNAL_SYNC">AESEBU_INTERNAL_SYNC</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_TRANSPARENT" href="#prontonet.enums.AudioConfig.AESEBU_TRANSPARENT">AESEBU_TRANSPARENT</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_UBIT_MASTER" href="#prontonet.enums.AudioConfig.AESEBU_UBIT_MASTER">AESEBU_UBIT_MASTER</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.AESEBU_UBIT_SLAVE" href="#prontonet.enums.AudioConfig.AESEBU_UBIT_SLAVE">AESEBU_UBIT_SLAVE</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.ANALOG" href="#prontonet.enums.AudioConfig.ANALOG">ANALOG</a></code></li>
+<li><code><a title="prontonet.enums.AudioConfig.ANALOG_EXTERNAL_SYNC" href="#prontonet.enums.AudioConfig.ANALOG_EXTERNAL_SYNC">ANALOG_EXTERNAL_SYNC</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.AudioMode" href="#prontonet.enums.AudioMode">AudioMode</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.AudioMode.DUAL" href="#prontonet.enums.AudioMode.DUAL">DUAL</a></code></li>
+<li><code><a title="prontonet.enums.AudioMode.JOINT" href="#prontonet.enums.AudioMode.JOINT">JOINT</a></code></li>
+<li><code><a title="prontonet.enums.AudioMode.MONO" href="#prontonet.enums.AudioMode.MONO">MONO</a></code></li>
+<li><code><a title="prontonet.enums.AudioMode.STEREO" href="#prontonet.enums.AudioMode.STEREO">STEREO</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.AudioModeAlgorithm" href="#prontonet.enums.AudioModeAlgorithm">AudioModeAlgorithm</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.AAC" href="#prontonet.enums.AudioModeAlgorithm.AAC">AAC</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.APTX" href="#prontonet.enums.AudioModeAlgorithm.APTX">APTX</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.AUTO" href="#prontonet.enums.AudioModeAlgorithm.AUTO">AUTO</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.G711" href="#prontonet.enums.AudioModeAlgorithm.G711">G711</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.G722" href="#prontonet.enums.AudioModeAlgorithm.G722">G722</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.MPEG" href="#prontonet.enums.AudioModeAlgorithm.MPEG">MPEG</a></code></li>
+<li><code><a title="prontonet.enums.AudioModeAlgorithm.PCM" href="#prontonet.enums.AudioModeAlgorithm.PCM">PCM</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.BitRate" href="#prontonet.enums.BitRate">BitRate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.BitRate.BITRATE_104_KBPS" href="#prontonet.enums.BitRate.BITRATE_104_KBPS">BITRATE_104_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_112_KBPS" href="#prontonet.enums.BitRate.BITRATE_112_KBPS">BITRATE_112_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_120_KBPS" href="#prontonet.enums.BitRate.BITRATE_120_KBPS">BITRATE_120_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_128_KBPS" href="#prontonet.enums.BitRate.BITRATE_128_KBPS">BITRATE_128_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_144_KBPS" href="#prontonet.enums.BitRate.BITRATE_144_KBPS">BITRATE_144_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_160_KBPS" href="#prontonet.enums.BitRate.BITRATE_160_KBPS">BITRATE_160_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_168_KBPS" href="#prontonet.enums.BitRate.BITRATE_168_KBPS">BITRATE_168_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_16_KBPS" href="#prontonet.enums.BitRate.BITRATE_16_KBPS">BITRATE_16_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_192_KBPS" href="#prontonet.enums.BitRate.BITRATE_192_KBPS">BITRATE_192_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_224_KBPS" href="#prontonet.enums.BitRate.BITRATE_224_KBPS">BITRATE_224_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_240_KBPS" href="#prontonet.enums.BitRate.BITRATE_240_KBPS">BITRATE_240_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_24_KBPS" href="#prontonet.enums.BitRate.BITRATE_24_KBPS">BITRATE_24_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_256_KBPS" href="#prontonet.enums.BitRate.BITRATE_256_KBPS">BITRATE_256_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_280_KBPS" href="#prontonet.enums.BitRate.BITRATE_280_KBPS">BITRATE_280_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_288_KBPS" href="#prontonet.enums.BitRate.BITRATE_288_KBPS">BITRATE_288_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_320_KBPS" href="#prontonet.enums.BitRate.BITRATE_320_KBPS">BITRATE_320_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_32_KBPS" href="#prontonet.enums.BitRate.BITRATE_32_KBPS">BITRATE_32_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_336_KBPS" href="#prontonet.enums.BitRate.BITRATE_336_KBPS">BITRATE_336_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_384_KBPS" href="#prontonet.enums.BitRate.BITRATE_384_KBPS">BITRATE_384_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_40_KBPS" href="#prontonet.enums.BitRate.BITRATE_40_KBPS">BITRATE_40_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_480_KBPS" href="#prontonet.enums.BitRate.BITRATE_480_KBPS">BITRATE_480_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_48_KBPS" href="#prontonet.enums.BitRate.BITRATE_48_KBPS">BITRATE_48_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_56_KBPS" href="#prontonet.enums.BitRate.BITRATE_56_KBPS">BITRATE_56_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_576_KBPS" href="#prontonet.enums.BitRate.BITRATE_576_KBPS">BITRATE_576_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_64_KBPS" href="#prontonet.enums.BitRate.BITRATE_64_KBPS">BITRATE_64_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_72_KBPS" href="#prontonet.enums.BitRate.BITRATE_72_KBPS">BITRATE_72_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_80_KBPS" href="#prontonet.enums.BitRate.BITRATE_80_KBPS">BITRATE_80_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_88_KBPS" href="#prontonet.enums.BitRate.BITRATE_88_KBPS">BITRATE_88_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_8_KBPS" href="#prontonet.enums.BitRate.BITRATE_8_KBPS">BITRATE_8_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_96_KBPS" href="#prontonet.enums.BitRate.BITRATE_96_KBPS">BITRATE_96_KBPS</a></code></li>
+<li><code><a title="prontonet.enums.BitRate.BITRATE_FREE" href="#prontonet.enums.BitRate.BITRATE_FREE">BITRATE_FREE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.BitsSample" href="#prontonet.enums.BitsSample">BitsSample</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.BitsSample.BITS_SAMPLE_16" href="#prontonet.enums.BitsSample.BITS_SAMPLE_16">BITS_SAMPLE_16</a></code></li>
+<li><code><a title="prontonet.enums.BitsSample.BITS_SAMPLE_20" href="#prontonet.enums.BitsSample.BITS_SAMPLE_20">BITS_SAMPLE_20</a></code></li>
+<li><code><a title="prontonet.enums.BitsSample.BITS_SAMPLE_24" href="#prontonet.enums.BitsSample.BITS_SAMPLE_24">BITS_SAMPLE_24</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.BondingType" href="#prontonet.enums.BondingType">BondingType</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.BondingType.CCSTELOS" href="#prontonet.enums.BondingType.CCSTELOS">CCSTELOS</a></code></li>
+<li><code><a title="prontonet.enums.BondingType.J52" href="#prontonet.enums.BondingType.J52">J52</a></code></li>
+<li><code><a title="prontonet.enums.BondingType.NONE" href="#prontonet.enums.BondingType.NONE">NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.Codec" href="#prontonet.enums.Codec">Codec</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.Codec.CODEC_1" href="#prontonet.enums.Codec.CODEC_1">CODEC_1</a></code></li>
+<li><code><a title="prontonet.enums.Codec.CODEC_2" href="#prontonet.enums.Codec.CODEC_2">CODEC_2</a></code></li>
+<li><code><a title="prontonet.enums.Codec.CODEC_MAX" href="#prontonet.enums.Codec.CODEC_MAX">CODEC_MAX</a></code></li>
+<li><code><a title="prontonet.enums.Codec.CODEC_NONE" href="#prontonet.enums.Codec.CODEC_NONE">CODEC_NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.Command" href="#prontonet.enums.Command">Command</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.Command.ALIVE" href="#prontonet.enums.Command.ALIVE">ALIVE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ALARMS_ACK" href="#prontonet.enums.Command.COMMAND_ALARMS_ACK">COMMAND_ALARMS_ACK</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ALARMS_DELETE" href="#prontonet.enums.Command.COMMAND_ALARMS_DELETE">COMMAND_ALARMS_DELETE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ALARMS_GET_LOG" href="#prontonet.enums.Command.COMMAND_ALARMS_GET_LOG">COMMAND_ALARMS_GET_LOG</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ALARMS_GET_STATUS" href="#prontonet.enums.Command.COMMAND_ALARMS_GET_STATUS">COMMAND_ALARMS_GET_STATUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ANSWER" href="#prontonet.enums.Command.COMMAND_ANSWER">COMMAND_ANSWER</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_AUDIO_GET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_AUDIO_GET_CONFIGURATION">COMMAND_AUDIO_GET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_AUDIO_SET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_AUDIO_SET_CONFIGURATION">COMMAND_AUDIO_SET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_CALL" href="#prontonet.enums.Command.COMMAND_CALL">COMMAND_CALL</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_CALL_FROM_BOOK" href="#prontonet.enums.Command.COMMAND_CALL_FROM_BOOK">COMMAND_CALL_FROM_BOOK</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_CALL_FROM_BOOK_ALL_LINES" href="#prontonet.enums.Command.COMMAND_CALL_FROM_BOOK_ALL_LINES">COMMAND_CALL_FROM_BOOK_ALL_LINES</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_CALL_V2" href="#prontonet.enums.Command.COMMAND_CALL_V2">COMMAND_CALL_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE">COMMAND_DECODER_GET_AUDIO_MODE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_AAC" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_AAC">COMMAND_DECODER_GET_AUDIO_MODE_AAC</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM">COMMAND_DECODER_GET_AUDIO_MODE_ALGORITHM</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_APTX" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_APTX">COMMAND_DECODER_GET_AUDIO_MODE_APTX</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G711" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G711">COMMAND_DECODER_GET_AUDIO_MODE_G711</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G722" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_G722">COMMAND_DECODER_GET_AUDIO_MODE_G722</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_MPEG" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_MPEG">COMMAND_DECODER_GET_AUDIO_MODE_MPEG</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_OPUS" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_OPUS">COMMAND_DECODER_GET_AUDIO_MODE_OPUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_PCM" href="#prontonet.enums.Command.COMMAND_DECODER_GET_AUDIO_MODE_PCM">COMMAND_DECODER_GET_AUDIO_MODE_PCM</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENABLE_NET_BACKUP" href="#prontonet.enums.Command.COMMAND_ENABLE_NET_BACKUP">COMMAND_ENABLE_NET_BACKUP</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE">COMMAND_ENCODER_GET_AUDIO_MODE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AAC" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AAC">COMMAND_ENCODER_GET_AUDIO_MODE_AAC</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM">COMMAND_ENCODER_GET_AUDIO_MODE_ALGORITHM</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_APTX" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_APTX">COMMAND_ENCODER_GET_AUDIO_MODE_APTX</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AUTO" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_AUTO">COMMAND_ENCODER_GET_AUDIO_MODE_AUTO</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G711" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G711">COMMAND_ENCODER_GET_AUDIO_MODE_G711</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G722" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_G722">COMMAND_ENCODER_GET_AUDIO_MODE_G722</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_MPEG" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_MPEG">COMMAND_ENCODER_GET_AUDIO_MODE_MPEG</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_OPUS" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_OPUS">COMMAND_ENCODER_GET_AUDIO_MODE_OPUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_PCM" href="#prontonet.enums.Command.COMMAND_ENCODER_GET_AUDIO_MODE_PCM">COMMAND_ENCODER_GET_AUDIO_MODE_PCM</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AAC" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AAC">COMMAND_ENCODER_SET_AUDIO_MODE_AAC</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX">COMMAND_ENCODER_SET_AUDIO_MODE_APTX</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2">COMMAND_ENCODER_SET_AUDIO_MODE_APTX_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AUTO" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_AUTO">COMMAND_ENCODER_SET_AUDIO_MODE_AUTO</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711">COMMAND_ENCODER_SET_AUDIO_MODE_G711</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2">COMMAND_ENCODER_SET_AUDIO_MODE_G711_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3">COMMAND_ENCODER_SET_AUDIO_MODE_G711_V3</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722">COMMAND_ENCODER_SET_AUDIO_MODE_G722</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2">COMMAND_ENCODER_SET_AUDIO_MODE_G722_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3">COMMAND_ENCODER_SET_AUDIO_MODE_G722_V3</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG">COMMAND_ENCODER_SET_AUDIO_MODE_MPEG</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2">COMMAND_ENCODER_SET_AUDIO_MODE_MPEG_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_OPUS" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_OPUS">COMMAND_ENCODER_SET_AUDIO_MODE_OPUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM">COMMAND_ENCODER_SET_AUDIO_MODE_PCM</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2" href="#prontonet.enums.Command.COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2">COMMAND_ENCODER_SET_AUDIO_MODE_PCM_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_ETHERNET_GET_SPEED" href="#prontonet.enums.Command.COMMAND_ETHERNET_GET_SPEED">COMMAND_ETHERNET_GET_SPEED</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_CALL_DURATION" href="#prontonet.enums.Command.COMMAND_GET_CALL_DURATION">COMMAND_GET_CALL_DURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_DEVICE_NET" href="#prontonet.enums.Command.COMMAND_GET_DEVICE_NET">COMMAND_GET_DEVICE_NET</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_DEVICE_NET_V2" href="#prontonet.enums.Command.COMMAND_GET_DEVICE_NET_V2">COMMAND_GET_DEVICE_NET_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_LINE_STATUS" href="#prontonet.enums.Command.COMMAND_GET_LINE_STATUS">COMMAND_GET_LINE_STATUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_LINE_STATUS_DETAILS" href="#prontonet.enums.Command.COMMAND_GET_LINE_STATUS_DETAILS">COMMAND_GET_LINE_STATUS_DETAILS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_INDEX" href="#prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_INDEX">COMMAND_GET_LOADED_PRESET_INDEX</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_NAME" href="#prontonet.enums.Command.COMMAND_GET_LOADED_PRESET_NAME">COMMAND_GET_LOADED_PRESET_NAME</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_MONITORS" href="#prontonet.enums.Command.COMMAND_GET_MONITORS">COMMAND_GET_MONITORS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_SIP_SERVER_REGISTER_STATUS" href="#prontonet.enums.Command.COMMAND_GET_SIP_SERVER_REGISTER_STATUS">COMMAND_GET_SIP_SERVER_REGISTER_STATUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_STREAMING_STATS" href="#prontonet.enums.Command.COMMAND_GET_STREAMING_STATS">COMMAND_GET_STREAMING_STATS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_STREAMING_STATS_V2" href="#prontonet.enums.Command.COMMAND_GET_STREAMING_STATS_V2">COMMAND_GET_STREAMING_STATS_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_STUN_SERVER_REGISTER_STATUS" href="#prontonet.enums.Command.COMMAND_GET_STUN_SERVER_REGISTER_STATUS">COMMAND_GET_STUN_SERVER_REGISTER_STATUS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_GET_VU_METERS" href="#prontonet.enums.Command.COMMAND_GET_VU_METERS">COMMAND_GET_VU_METERS</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_HANG_UP" href="#prontonet.enums.Command.COMMAND_HANG_UP">COMMAND_HANG_UP</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_IP_GET_STREAMING_PROTOCOL" href="#prontonet.enums.Command.COMMAND_IP_GET_STREAMING_PROTOCOL">COMMAND_IP_GET_STREAMING_PROTOCOL</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_IP_SET_STREAMING_PROTOCOL" href="#prontonet.enums.Command.COMMAND_IP_SET_STREAMING_PROTOCOL">COMMAND_IP_SET_STREAMING_PROTOCOL</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_LOAD_PRESET" href="#prontonet.enums.Command.COMMAND_LOAD_PRESET">COMMAND_LOAD_PRESET</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_PRODYS_V4_GET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_PRODYS_V4_GET_CONFIGURATION">COMMAND_PRODYS_V4_GET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_PRODYS_V4_SET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_PRODYS_V4_SET_CONFIGURATION">COMMAND_PRODYS_V4_SET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_RESET_DEVICE" href="#prontonet.enums.Command.COMMAND_RESET_DEVICE">COMMAND_RESET_DEVICE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_RESPONSE" href="#prontonet.enums.Command.COMMAND_RESPONSE">COMMAND_RESPONSE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_RUN_GPI_ACTION" href="#prontonet.enums.Command.COMMAND_RUN_GPI_ACTION">COMMAND_RUN_GPI_ACTION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SET_DEVICE_NET" href="#prontonet.enums.Command.COMMAND_SET_DEVICE_NET">COMMAND_SET_DEVICE_NET</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SET_DEVICE_NET_V2" href="#prontonet.enums.Command.COMMAND_SET_DEVICE_NET_V2">COMMAND_SET_DEVICE_NET_V2</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SIP_GET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_SIP_GET_CONFIGURATION">COMMAND_SIP_GET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SIP_SET_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_SIP_SET_CONFIGURATION">COMMAND_SIP_SET_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION">COMMAND_STREAMING_RX_GET_CODEC_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION">COMMAND_STREAMING_RX_SET_CODEC_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_STREAMING_STATS_RESET" href="#prontonet.enums.Command.COMMAND_STREAMING_STATS_RESET">COMMAND_STREAMING_STATS_RESET</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION">COMMAND_STREAMING_TX_GET_CODEC_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION" href="#prontonet.enums.Command.COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION">COMMAND_STREAMING_TX_SET_CODEC_CONFIGURATION</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SYS_BLINK_DEVICE" href="#prontonet.enums.Command.COMMAND_SYS_BLINK_DEVICE">COMMAND_SYS_BLINK_DEVICE</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SYS_GET_DEVICE_NAME" href="#prontonet.enums.Command.COMMAND_SYS_GET_DEVICE_NAME">COMMAND_SYS_GET_DEVICE_NAME</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SYS_GET_VERSION_INFO" href="#prontonet.enums.Command.COMMAND_SYS_GET_VERSION_INFO">COMMAND_SYS_GET_VERSION_INFO</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_SYS_SET_DEVICE_NAME" href="#prontonet.enums.Command.COMMAND_SYS_SET_DEVICE_NAME">COMMAND_SYS_SET_DEVICE_NAME</a></code></li>
+<li><code><a title="prontonet.enums.Command.COMMAND_X21_ENABLE_TX" href="#prontonet.enums.Command.COMMAND_X21_ENABLE_TX">COMMAND_X21_ENABLE_TX</a></code></li>
+<li><code><a title="prontonet.enums.Command.CONNECT" href="#prontonet.enums.Command.CONNECT">CONNECT</a></code></li>
+<li><code><a title="prontonet.enums.Command.STATUS_ALARMS_STATUS_CHANGED" href="#prontonet.enums.Command.STATUS_ALARMS_STATUS_CHANGED">STATUS_ALARMS_STATUS_CHANGED</a></code></li>
+<li><code><a title="prontonet.enums.Command.STATUS_DECODER_AUDIO_MODE_CHANGED" href="#prontonet.enums.Command.STATUS_DECODER_AUDIO_MODE_CHANGED">STATUS_DECODER_AUDIO_MODE_CHANGED</a></code></li>
+<li><code><a title="prontonet.enums.Command.STATUS_DEVICE_NET_CHANGED" href="#prontonet.enums.Command.STATUS_DEVICE_NET_CHANGED">STATUS_DEVICE_NET_CHANGED</a></code></li>
+<li><code><a title="prontonet.enums.Command.STATUS_ENCODER_AUDIO_MODE_CHANGED" href="#prontonet.enums.Command.STATUS_ENCODER_AUDIO_MODE_CHANGED">STATUS_ENCODER_AUDIO_MODE_CHANGED</a></code></li>
+<li><code><a title="prontonet.enums.Command.STATUS_LINE_STATUS_CHANGED" href="#prontonet.enums.Command.STATUS_LINE_STATUS_CHANGED">STATUS_LINE_STATUS_CHANGED</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.DeviceNet" href="#prontonet.enums.DeviceNet">DeviceNet</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.DeviceNet.IP" href="#prontonet.enums.DeviceNet.IP">IP</a></code></li>
+<li><code><a title="prontonet.enums.DeviceNet.ISDN" href="#prontonet.enums.DeviceNet.ISDN">ISDN</a></code></li>
+<li><code><a title="prontonet.enums.DeviceNet.NONE" href="#prontonet.enums.DeviceNet.NONE">NONE</a></code></li>
+<li><code><a title="prontonet.enums.DeviceNet.PSTN" href="#prontonet.enums.DeviceNet.PSTN">PSTN</a></code></li>
+<li><code><a title="prontonet.enums.DeviceNet.X21" href="#prontonet.enums.DeviceNet.X21">X21</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.DeviceSubNet" href="#prontonet.enums.DeviceSubNet">DeviceSubNet</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_3G" href="#prontonet.enums.DeviceSubNet.DEVICE_SUBNET_3G">DEVICE_SUBNET_3G</a></code></li>
+<li><code><a title="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_ETHERNET" href="#prontonet.enums.DeviceSubNet.DEVICE_SUBNET_ETHERNET">DEVICE_SUBNET_ETHERNET</a></code></li>
+<li><code><a title="prontonet.enums.DeviceSubNet.DEVICE_SUBNET_NONE" href="#prontonet.enums.DeviceSubNet.DEVICE_SUBNET_NONE">DEVICE_SUBNET_NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.EncoderMix" href="#prontonet.enums.EncoderMix">EncoderMix</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.EncoderMix.LR" href="#prontonet.enums.EncoderMix.LR">LR</a></code></li>
+<li><code><a title="prontonet.enums.EncoderMix.LR_3_DB" href="#prontonet.enums.EncoderMix.LR_3_DB">LR_3_DB</a></code></li>
+<li><code><a title="prontonet.enums.EncoderMix.LR_6_DB" href="#prontonet.enums.EncoderMix.LR_6_DB">LR_6_DB</a></code></li>
+<li><code><a title="prontonet.enums.EncoderMix.NONE" href="#prontonet.enums.EncoderMix.NONE">NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.EthernetInterface" href="#prontonet.enums.EthernetInterface">EthernetInterface</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.EthernetInterface.LAN_1" href="#prontonet.enums.EthernetInterface.LAN_1">LAN_1</a></code></li>
+<li><code><a title="prontonet.enums.EthernetInterface.LAN_2" href="#prontonet.enums.EthernetInterface.LAN_2">LAN_2</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.EthernetNegotiatedSpeed" href="#prontonet.enums.EthernetNegotiatedSpeed">EthernetNegotiatedSpeed</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.EthernetNegotiatedSpeed.LINK_DOWN" href="#prontonet.enums.EthernetNegotiatedSpeed.LINK_DOWN">LINK_DOWN</a></code></li>
+<li><code><a title="prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_FULL_DUPLEX" href="#prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_FULL_DUPLEX">SPEED_100_MB_FULL_DUPLEX</a></code></li>
+<li><code><a title="prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_HALF_DUPLEX" href="#prontonet.enums.EthernetNegotiatedSpeed.SPEED_100_MB_HALF_DUPLEX">SPEED_100_MB_HALF_DUPLEX</a></code></li>
+<li><code><a title="prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_FULL_DUPLEX" href="#prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_FULL_DUPLEX">SPEED_10_MB_FULL_DUPLEX</a></code></li>
+<li><code><a title="prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_HALF_DUPLEX" href="#prontonet.enums.EthernetNegotiatedSpeed.SPEED_10_MB_HALF_DUPLEX">SPEED_10_MB_HALF_DUPLEX</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.Frequency" href="#prontonet.enums.Frequency">Frequency</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.Frequency.FREQ_11025" href="#prontonet.enums.Frequency.FREQ_11025">FREQ_11025</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_12000" href="#prontonet.enums.Frequency.FREQ_12000">FREQ_12000</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_16000" href="#prontonet.enums.Frequency.FREQ_16000">FREQ_16000</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_22050" href="#prontonet.enums.Frequency.FREQ_22050">FREQ_22050</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_24000" href="#prontonet.enums.Frequency.FREQ_24000">FREQ_24000</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_32000" href="#prontonet.enums.Frequency.FREQ_32000">FREQ_32000</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_44100" href="#prontonet.enums.Frequency.FREQ_44100">FREQ_44100</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_48000" href="#prontonet.enums.Frequency.FREQ_48000">FREQ_48000</a></code></li>
+<li><code><a title="prontonet.enums.Frequency.FREQ_8000" href="#prontonet.enums.Frequency.FREQ_8000">FREQ_8000</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.G711Law" href="#prontonet.enums.G711Law">G711Law</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.G711Law.A" href="#prontonet.enums.G711Law.A">A</a></code></li>
+<li><code><a title="prontonet.enums.G711Law.MU" href="#prontonet.enums.G711Law.MU">MU</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.IPCallType" href="#prontonet.enums.IPCallType">IPCallType</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.IPCallType.MULTICAST_RX" href="#prontonet.enums.IPCallType.MULTICAST_RX">MULTICAST_RX</a></code></li>
+<li><code><a title="prontonet.enums.IPCallType.MULTICAST_TX" href="#prontonet.enums.IPCallType.MULTICAST_TX">MULTICAST_TX</a></code></li>
+<li><code><a title="prontonet.enums.IPCallType.UNICAST_BIDIRECTIONAL" href="#prontonet.enums.IPCallType.UNICAST_BIDIRECTIONAL">UNICAST_BIDIRECTIONAL</a></code></li>
+<li><code><a title="prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_RX" href="#prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_RX">UNICAST_UNIDIRECTIONAL_RX</a></code></li>
+<li><code><a title="prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_TX" href="#prontonet.enums.IPCallType.UNICAST_UNIDIRECTIONAL_TX">UNICAST_UNIDIRECTIONAL_TX</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.LineStatus" href="#prontonet.enums.LineStatus">LineStatus</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.LineStatus.CALLING" href="#prontonet.enums.LineStatus.CALLING">CALLING</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.CALL_REJECTED" href="#prontonet.enums.LineStatus.CALL_REJECTED">CALL_REJECTED</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.CONNECTED_CALLED" href="#prontonet.enums.LineStatus.CONNECTED_CALLED">CONNECTED_CALLED</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.CONNECTED_RECEIVED" href="#prontonet.enums.LineStatus.CONNECTED_RECEIVED">CONNECTED_RECEIVED</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.DISCONNECTED" href="#prontonet.enums.LineStatus.DISCONNECTED">DISCONNECTED</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.DISCONNECTING" href="#prontonet.enums.LineStatus.DISCONNECTING">DISCONNECTING</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.NOT_AVAILABLE" href="#prontonet.enums.LineStatus.NOT_AVAILABLE">NOT_AVAILABLE</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.NO_PHYSICAL_LINE" href="#prontonet.enums.LineStatus.NO_PHYSICAL_LINE">NO_PHYSICAL_LINE</a></code></li>
+<li><code><a title="prontonet.enums.LineStatus.RECEIVING_CALL" href="#prontonet.enums.LineStatus.RECEIVING_CALL">RECEIVING_CALL</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.MPEGL3Polarity" href="#prontonet.enums.MPEGL3Polarity">MPEGL3Polarity</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.MPEGL3Polarity.INVERSE" href="#prontonet.enums.MPEGL3Polarity.INVERSE">INVERSE</a></code></li>
+<li><code><a title="prontonet.enums.MPEGL3Polarity.NORMATIVE" href="#prontonet.enums.MPEGL3Polarity.NORMATIVE">NORMATIVE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.MPEGLayer" href="#prontonet.enums.MPEGLayer">MPEGLayer</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.MPEGLayer.L1" href="#prontonet.enums.MPEGLayer.L1">L1</a></code></li>
+<li><code><a title="prontonet.enums.MPEGLayer.L2" href="#prontonet.enums.MPEGLayer.L2">L2</a></code></li>
+<li><code><a title="prontonet.enums.MPEGLayer.L3" href="#prontonet.enums.MPEGLayer.L3">L3</a></code></li>
+<li><code><a title="prontonet.enums.MPEGLayer.L_NOT" href="#prontonet.enums.MPEGLayer.L_NOT">L_NOT</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.ProntoNetCodecMode" href="#prontonet.enums.ProntoNetCodecMode">ProntoNetCodecMode</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.ProntoNetCodecMode.DOUBLE" href="#prontonet.enums.ProntoNetCodecMode.DOUBLE">DOUBLE</a></code></li>
+<li><code><a title="prontonet.enums.ProntoNetCodecMode.SIMPLE" href="#prontonet.enums.ProntoNetCodecMode.SIMPLE">SIMPLE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.SIPAddressType" href="#prontonet.enums.SIPAddressType">SIPAddressType</a></code></h4>
+<ul class="">
+<li><code><a title="prontonet.enums.SIPAddressType.LOCAL" href="#prontonet.enums.SIPAddressType.LOCAL">LOCAL</a></code></li>
+<li><code><a title="prontonet.enums.SIPAddressType.PUBLIC" href="#prontonet.enums.SIPAddressType.PUBLIC">PUBLIC</a></code></li>
+<li><code><a title="prontonet.enums.SIPAddressType.STUN" href="#prontonet.enums.SIPAddressType.STUN">STUN</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="prontonet.enums.StreamingProtocol" href="#prontonet.enums.StreamingProtocol">StreamingProtocol</a></code></h4>
+<ul class="two-column">
+<li><code><a title="prontonet.enums.StreamingProtocol.CCS" href="#prontonet.enums.StreamingProtocol.CCS">CCS</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.PRODYS" href="#prontonet.enums.StreamingProtocol.PRODYS">PRODYS</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.PRODYS_V2" href="#prontonet.enums.StreamingProtocol.PRODYS_V2">PRODYS_V2</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.PRODYS_V3" href="#prontonet.enums.StreamingProtocol.PRODYS_V3">PRODYS_V3</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.PRODYS_V4" href="#prontonet.enums.StreamingProtocol.PRODYS_V4">PRODYS_V4</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.RTP" href="#prontonet.enums.StreamingProtocol.RTP">RTP</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.SAP" href="#prontonet.enums.StreamingProtocol.SAP">SAP</a></code></li>
+<li><code><a title="prontonet.enums.StreamingProtocol.SIP" href="#prontonet.enums.StreamingProtocol.SIP">SIP</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
