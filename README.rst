@@ -1,11 +1,8 @@
 prontonet-py
 ============
 
-.. image:: https://badge.fury.io/py/prontonet-py.svg
-    :target: https://badge.fury.io/py/prontonet-py
-
-.. image:: https://readthedocs.org/projects/prontonet/badge/?version=latest
-  :target: https://prontonet.readthedocs.io/en/latest/?badge=latest
+.. image:: https://badge.fury.io/py/prontonet.svg
+    :target: https://badge.fury.io/py/prontonet
 
 .. image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
    :target: https://github.com/dgalus/prontonet-py/blob/master/LICENSE
@@ -31,9 +28,9 @@ https://pypi.org/project/prontonet/
 
 Documentation
 -------------
-https://prontonet.rtfd.io
+https://dgalus.github.io/prontonet-py/
 
-Documentation can be also found in the `docs/` directory as reStructuredText files. Build the docs by running `make` in the `docs/` directory, then viewing `docs/_build/html/index.html`.
+Documentation can be also found in the `docs/` directory.
 
 Installation
 ------------
