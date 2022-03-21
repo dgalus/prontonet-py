@@ -1,8 +1,8 @@
 prontonet-py
 ============
 
-.. image:: https://badge.fury.io/py/prontonet.svg
-    :target: https://badge.fury.io/py/prontonet
+.. image:: https://badge.fury.io/py/prontonet-py.svg
+    :target: https://badge.fury.io/py/prontonet-py
 
 .. image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
    :target: https://github.com/dgalus/prontonet-py/blob/master/LICENSE
@@ -24,7 +24,7 @@ https://github.com/dgalus/prontonet-py
 
 PyPI package
 ------------
-https://pypi.org/project/prontonet/
+https://pypi.org/project/prontonet-py/
 
 Documentation
 -------------
@@ -34,7 +34,7 @@ Documentation can be also found in the `docs/` directory.
 
 Installation
 ------------
-    python -m pip install prontonet
+    python -m pip install prontonet-py
 
 Author
 ------

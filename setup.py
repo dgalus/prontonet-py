@@ -8,7 +8,7 @@ def readme_file_contents():
 
 
 setup(
-    name='prontonet',
+    name='prontonet-py',
     version='0.0.1',
     description='Python SDK library for Prontonet Family v2.5.4',
     long_description=readme_file_contents(),
